@@ -23,6 +23,14 @@ h2 {
     color: #333;
 }
 
+.cmps {
+  display: flex;
+}
+
+.infx {
+  display: flex;
+}
+
 .team-member {
     text-align: center;
 }
