@@ -1,0 +1,74 @@
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* Set the background color to white */
+}
+
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    margin-right: 10px;
+}
+
+.rounded-box {
+    border-radius: 20px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.role-section {
+    text-align: left;
+    margin-left: 20px;
+    width: 80%; /* Set the width to 80% of the screen */
+}
+
+.role-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.horizontal-line {
+    width: 100%; /* Set the width to 100% */
+    border-top: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align boxes vertically with the role name text */
+    width: 80%; /* Set the width to 80% of the screen */
+}
+
+.sample-box {
+    border: 2px solid #000; /* Add black border */
+    border-radius: 20px;
+    background-color: #fff; /* Set background color to white */
+    color: #3498db; /* Set text color to a contrasting color */
+    padding: 20px;
+    margin-bottom: 10px;
+    width: 150px; /* Set equal width for all boxes */
+    height: 150px; /* Set equal height for all boxes */
+}
