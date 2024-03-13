@@ -16,5 +16,5 @@ export const routes: Routes = [
     {path: 'signIn', component: SignInComponent},
     {path: 'signOut', component: SignOutComponent},
     {path: 'nurse-page', component: NursePageComponent}
-    {path: 'hospital-page', component: HospitalSearchComponent}
+    {path: 'hospital-search', component: HospitalSearchComponent}
 ];
