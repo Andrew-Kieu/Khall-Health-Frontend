@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { NursePageComponent } from './nurse-page/nurse-page.component';
+import { NurseFormComponent } from './nurse-form/nurse-form.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent}, 
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path: 'contact', component: ContactComponent}, 
     {path: 'signIn', component: SignInComponent},
     {path: 'signOut', component: SignOutComponent},
-    {path: 'nurse-page', component: NursePageComponent}
+    {path: 'nurse-page', component: NursePageComponent},
+    {path: 'nurse-form', component: NurseFormComponent}
 ];

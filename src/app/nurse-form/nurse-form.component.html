@@ -1,0 +1,40 @@
+<form #userForm="ngForm" (ngSubmit)="submitForm(userForm)" class="max-w-md mx-auto mt-4 p-6 bg-white rounded shadow-md">
+    <div class="mb-4">
+        <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+        <input type="text" id="firstName" name="firstName" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="profession" class="block text-gray-700 text-sm font-bold mb-2">Profession:</label>
+        <input type="text" id="profession" name="profession" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="specialty" class="block text-gray-700 text-sm font-bold mb-2">Specialty:</label>
+        <input type="text" id="specialty" name="specialty" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="licenses" class="block text-gray-700 text-sm font-bold mb-2">Licences:</label>
+        <input type="text" id="licenses" name="licenses" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="certifications" class="block text-gray-700 text-sm font-bold mb-2">Certifications:</label>
+        <input type="text" id="certifications" name="certifications" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+        <label for="degrees" class="block text-gray-700 text-sm font-bold mb-2">Degrees:</label>
+        <input type="text" id="degrees" name="degrees" ngModel required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <button type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        [disabled]="userForm.invalid">Submit</button>
+</form>
