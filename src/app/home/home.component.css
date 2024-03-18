@@ -49,7 +49,7 @@ h2{
 .call-to-action {
     text-align: center;
     padding: 2rem;
-    background-color: white;
+    background-position: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .call-to-action h1 {
