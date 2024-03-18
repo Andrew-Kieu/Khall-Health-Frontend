@@ -29,6 +29,10 @@ export class NurseService {
   //       catchError(this.handleError)
   //     );
   // }
+  
+  getNurses(): Observable<any> {
+    return this.http.get(this.nurseURL + "/api/nurses");
+  }
 
   addNurse(nurse: any): Observable<any> {
     return this.http.post(this.nurseURL + "/api/nurses", nurse);
