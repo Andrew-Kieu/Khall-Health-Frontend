@@ -6,30 +6,56 @@
     <title>Nursing Platform Homepage</title>
     <link rel="stylesheet" href="home.component.css">
 </head> -->
-<div>
-    
-    <section class="call-to-action">
-        <h1>Website Motto</h1>
-        <p>Website 'Call to Action'</p>
+<div class="body">
+    <section class="call-to-action" [style.backgroundImage]="'url(' + horizonURL + ')'">
+        <h1>KHALL Health Hiring</h1>
+        <p class="special">Your Journey, Our Commitment</p>
+        <!--<p>Join Now and Simplify Your Nursing Career!</p>-->
     </section>
-    <div class="main-content">
-        <div class="tagline-mission">
-            <h2>Website Tag Line</h2>
-            <p>Website Mission Statement</p>
-        </div>
-        <div class="features">
-            <!-- Repeat this block for each feature -->
-            <div class="feature-item">
-                <input type="checkbox" checked disabled>
-                <ul>Innovative function, solution, or efficiency</ul>
-                <ul>Innovative function, solution, or efficiency</ul>
-                <ul>Innovative function, solution, or efficiency</ul>
+    <div class="tagline-mission">
+        <div class="centerBox">
+            <h2>Find Your Contract, Find Your Home</h2><br>
+            <div><img [src]="imageURL" alt="Walking Nurses" class="shrinkimg"></div>
+
+            <div>
+                <p><span class="special">Our mission</span> is to provide nurses with effective and effcient access to
+                        contract opportunities and housing solutions, enabling them to focus on their
+                        vital role in healthcare delivery.
+                </p><br>
+                <p>
+                    We strive to streamline the process of finding
+                    suitable contracts and accommodations, offering convenience, reliability, and peace
+                    of mind. Through our platform, we aim to support nurses in their career journeys
+                    while fostering a sense of community and well-being.
+                </p>
             </div>
-            <!-- More feature items here -->
+
         </div>
     </div>
+    <div class="features">
+        <!-- Repeat this block for each feature -->
+        <ul class="feature-item">
+            <li><img [src]="mglassURL" alt="house"><strong>Smart Matching Algorithm</strong><br> "Our app employs a sophisticated matching algorithm that
+                swiftly
+                connects nurses with hospital contracts that perfectly align with their skills, preferences, and
+                availability.
+                Say goodbye to tedious searches – our algorithm does the heavy lifting for you."</li><br>
+
+            <li><img [src]="bellURL" alt="house"><strong>Real-Time Notifications</strong><br> "We understand the urgency of filling nursing positions
+                promptly. That's why our app
+                sends real-time notifications to nurses when suitable contracts become available, ensuring they never
+                miss out on a promising opportunity."</li><br>
+
+            <li><img [src]="houseURL" alt="house"><strong>Integrated Housing Solutions</strong><br> "In addition to contract matching, our app offers
+                integrated housing solutions tailored to each nurse's needs and preferences.
+                From nearby accommodations to commute times, we provide comprehensive support to ensure a smooth
+                transition to the new assignment."</li>
+        </ul>
+        <!-- More feature items here -->
+    </div>
     <footer class="footer">
-        <!-- Footer content here -->
+        <!-- Footer content here -->`
+        <p>Information</p>
     </footer>
 </div>
 <!-- </html> -->
