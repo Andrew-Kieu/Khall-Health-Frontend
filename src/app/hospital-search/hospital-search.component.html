@@ -1,50 +1,100 @@
-<div class="top-section">
-    <div class="container">
-        <div class="dropdown">
-            <select>
-                <option value="roles">Roles</option>
-                <!-- Add more options as needed -->
+<div class="main">
+    <div class="content">
+        <div class="search-section">
+            <!-- Search fields here -->
+            <input type="text" id="searchBox" placeholder="Hospital Name...">
+            <button>Search</button>
+            <select name="professionFilter" id="professionFilter">
+                <option value="">Select Profession</option>
+                <option value="rn">Registered Nurse (RN)</option>
+                <option value="lpn">Licensed Practical Nurse (LPN)</option>
+                <!-- Add more profession options here -->
+            </select>
+
+            <select name="specialtyFilter" id="specialtyFilter">
+                <option value="">Select Specialty</option>
+                <option value="icu">ICU</option>
+                <option value="er">ER</option>
+                <!-- Add more specialty options here -->
+            </select>
+
+            <select name="statusFilter" id="statusFilter">
+                <option value="">Select Status</option>
+                <option value="looking_for_work">Looking for Work</option>
+                <option value="employed">Employed</option>
+                <!-- Add more status options here -->
             </select>
         </div>
-
-        <div class="dropdown">
-            <select>
-                <option value="specialties">Specialties</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
-
-        <div class="dropdown">
-            <select>
-                <option value="location">Location</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
-
-        <div class="rounded-box">
-            Search
+        
+        <div class="search-results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Depts. Hiring</th>
+                        <th>#ofContracts</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#12345</td>
+                        <td>Lafayette Urgent Care</td>
+                        <td>Lafayette, Louisiana</td>
+                        <td>ER, etc...</td>
+                        <td>1</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>Hospital 2</td>
+                        <td>Name 2</td>
+                        <td>City,State 2</td>
+                        <td>hiringDepts 2</td>
+                        <td>Contracts: 2</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                   <tr>
+                        <td>Hospital 3</td>
+                        <td>Name 3</td>
+                        <td>City, State 3</td>
+                        <td>hiringDepts 3</td>
+                        <td>Contracts: 3</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>Hospital 4</td>
+                        <td>Name 4</td>
+                        <td>City, State 4</td>
+                        <td>hiringDepts 4</td>
+                        <td>Contracts: 4</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>Hospital 5</td>
+                        <td>Name 5</td>
+                        <td>City, State 5</td>
+                        <td>hiringDepts 5</td>
+                        <td>Contracts: 5</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-
-<div class="role-section">
-    <div class="role-name">
-        Role Name
-    </div>
-    <div class="horizontal-line"></div>
-
-    <div class="box-container">
-        <div class="sample-box">
-            Sample Text 1
-        </div>
-        <div class="sample-box">
-            Sample Text 2
-        </div>
-        <div class="sample-box">
-            Sample Text 3
-        </div>
-        <div class="sample-box">
-            Sample Text 4
+    <div class="sidebar">
+        <div class="more-info">
+            <h3>More Hospital Info</h3>
+            <ul>
+                <li>Hospital ID</li>
+                <li>HospitalName: [Name]</li>
+                <li>Detailed Address</li>
+                <li>Contact Info: [Email Address]</li>
+                <li>Contract Count</li>
+                <li><button>Edit Hospital</button> <button>Delete Hospital</button></li>
+                <li><button>Leave a Review</button></li>
+            </ul>
         </div>
     </div>
 </div>

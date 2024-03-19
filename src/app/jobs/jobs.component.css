@@ -1,67 +1,71 @@
 body {
     font-family: Arial, sans-serif;
 }
-.header {
-    display: flex; /* Use flexbox for the header */
-    align-items: center; /* Center the items vertically */
-    justify-content: space-between; /* Space out the logo and the navigation */
-    border: 1px solid #000;
-    margin: 10px;
-    padding: 10px;
-}
-
-.logo {
-    flex: 1; /* Allow the logo to take up space on the far left */
-}
-
-nav {
-    flex: 2; /* Allow the navigation to take up the remaining space */
-}
-.main, .sidebar, .footer {
-    border: 1px solid #000; /* Add a border to make the divisions visible */
+.header, .main, .sidebar, .footer {
+    border: 1px solid #000; /* Visible divisions */
     margin: 10px;
     padding: 10px;
 }
 .header, .footer {
     text-align: center;
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    margin-right: auto;
+}
 .main {
     display: flex;
 }
 .content {
-    flex: 3;
+    flex-grow: 1;
+    margin-right: 20px;
 }
 .sidebar {
-    flex: 1;
+    width: 250px; /* Fixed width for the sidebar */
 }
 table {
     width: 100%;
     border-collapse: collapse;
 }
 th, td {
-    border: 1px solid #000; /* Add a border to table cells */
+    border: 1px solid #000; /* Visible divisions */
     text-align: left;
     padding: 8px;
 }
 th {
     background-color: #f2f2f2;
 }
-.search-section, .search-results {
+.search-section, .search-results, .more-info {
     margin-bottom: 20px;
 }
-.search-section input, .search-section select {
+.search-section input, .search-section select, .search-section button {
     margin-right: 10px;
 }
-.search-results table {
+.search-results table, .more-info {
     margin-top: 20px;
 }
-.sidebar ul {
+.more-info ul {
     list-style: none;
     padding: 0;
 }
-.sidebar li {
+.more-info li {
     background-color: #f2f2f2;
     margin-bottom: 10px;
     padding: 5px;
     border-radius: 5px;
+}
+button {
+    cursor: pointer;
+}
+.pinnedBox{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
 }
