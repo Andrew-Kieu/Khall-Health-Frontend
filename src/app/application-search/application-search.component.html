@@ -1,0 +1,88 @@
+<div class="main">
+    <div class="content">
+        <div class="search-section">
+            <input type="text" id="searchBox1" placeholder="Application ID...">
+            <button>Search</button>
+            <input type="text" id="searchBox2" placeholder="Nurse/Hospital Name...">
+            <button>Search</button>
+            <select name="Status" id="statusFilter">
+                <option value="-1">Select Status</option>
+                <option value="0">Ongoing</option>
+                <option value="1">Accepted</option>
+                <option value="2">Not Accepted</option>
+                <!-- Add more status options here -->
+            </select>
+        </div>
+        
+        <div class="search-results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Application ID</th>
+                        <th>Status</th>
+                        <th>Nurse Name</th>
+                        <th>Hospital Name</th>
+                        <th>Contact Expiration</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A#12345</td>
+                        <td>Ongoing</td>
+                        <td>Samantha Salad</td>
+                        <td>Lafayette Urgent Care</td>
+                        <td>November 1, 2024</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>ID 2</td>
+                        <td>Status 2</td>
+                        <td>Nurse Name 2</td>
+                        <td>Hospital Name 2</td>
+                        <td>Expiration 2</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>ID 3</td>
+                        <td>Status 3</td>
+                        <td>Nurse Name 3</td>
+                        <td>Hospital Name 3</td>
+                        <td>Expiration 3</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>ID 4</td>
+                        <td>Status 4</td>
+                        <td>Nurse Name 4</td>
+                        <td>Hospital Name 4</td>
+                        <td>Expiration 4</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>ID 5</td>
+                        <td>Status 5</td>
+                        <td>Nurse Name 5</td>
+                        <td>Hospital Name 5</td>
+                        <td>Expiration 5</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="more-info">
+            <h3>More Application Info</h3>
+            <ul>
+                <li>Application ID</li>
+                <li>Hospital ID</li>
+                <li>HospitalName: [Name]</li>
+                <li>Detailed Address</li>
+                <li>Nurse ID</li>
+                <li>NurseName: [Name]</li>
+                <li><button>Edit Application</button> <button>Delete Application</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
