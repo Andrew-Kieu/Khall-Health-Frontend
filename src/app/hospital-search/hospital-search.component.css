@@ -61,11 +61,3 @@ th {
 button {
     cursor: pointer;
 }
-.pinnedBox{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #000;
-  display: flex;
-  margin: 10px;
-  padding: 10px;
-}

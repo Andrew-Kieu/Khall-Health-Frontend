@@ -2,7 +2,7 @@
     <div class="content">
         <div class="search-section">
             <!-- Search fields here -->
-            <input type="text" id="searchBox" placeholder="Nurse Name...">
+            <input type="text" id="searchBox" placeholder="Hospital Name...">
             <button>Search</button>
             <select name="professionFilter" id="professionFilter">
                 <option value="">Select Profession</option>
@@ -30,78 +30,70 @@
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th>Profession</th>
-                        <th>Specialty</th>
-                        <th>Licences</th>
-                        <th>Certifications</th>
-                        <th>Degrees</th>
+                        <th>Location</th>
+                        <th>Depts. Hiring</th>
+                        <th>#ofContracts</th>
                         <th>More Info</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Violet</td>
-                        <td>RN</td>
-                        <td>ICU</td>
-                        <td>RN-CNA</td>
-                        <td>ACRN</td>
-                        <td>BSN</td>
+                        <td>#12345</td>
+                        <td>Lafayette Urgent Care</td>
+                        <td>Lafayette, Louisiana</td>
+                        <td>ER, etc...</td>
+                        <td>1</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
                     <tr>
-                        <td>Rose</td>
-                        <td>Prof2</td>
-                        <td>Spec2</td>
-                        <td>Lics2</td>
-                        <td>Cert2</td>
-                        <td>Degs2</td>
+                        <td>Hospital 2</td>
+                        <td>Name 2</td>
+                        <td>City,State 2</td>
+                        <td>hiringDepts 2</td>
+                        <td>Contracts: 2</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
                    <tr>
-                        <td>Daisy</td>
-                        <td>Prof3</td>
-                        <td>Spec3</td>
-                        <td>Lics3</td>
-                        <td>Cert3</td>
-                        <td>Degs3</td>
+                        <td>Hospital 3</td>
+                        <td>Name 3</td>
+                        <td>City, State 3</td>
+                        <td>hiringDepts 3</td>
+                        <td>Contracts: 3</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
                     <tr>
-                        <td>Dr.Green</td>
-                        <td>Prof4</td>
-                        <td>Spec4</td>
-                        <td>Lics4</td>
-                        <td>Cert4</td>
-                        <td>Degs4</td>
+                        <td>Hospital 4</td>
+                        <td>Name 4</td>
+                        <td>City, State 4</td>
+                        <td>hiringDepts 4</td>
+                        <td>Contracts: 4</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
                     <tr>
-                        <td>Mr.Pink</td>
-                        <td>Prof5</td>
-                        <td>Spec5</td>
-                        <td>Lics5</td>
-                        <td>Cert5</td>
-                        <td>Degs5</td>
+                        <td>Hospital 5</td>
+                        <td>Name 5</td>
+                        <td>City, State 5</td>
+                        <td>hiringDepts 5</td>
+                        <td>Contracts: 5</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
                 </tbody>
             </table>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="/nurse-form">Go to Other Page</button>
-
         </div>
     </div>
     <div class="sidebar">
         <div class="more-info">
-            <h3>More Nurse Info</h3>
+            <h3>More Hospital Info</h3>
             <ul>
-                <li>Nurse Name: [Name]</li>
-                <li>Home City, State</li>
-                <li>Employment Status: Looking for Work</li>
-                <li>Previous Employment: [Details]</li>
+                <li>Hospital ID</li>
+                <li>HospitalName: [Name]</li>
+                <li>Detailed Address</li>
                 <li>Contact Info: [Email Address]</li>
-                <li>Applied to: [List]</li>
-                <li><button>Edit Nurse</button> <button>Ask to Apply</button></li>
+                <li>Contract Count</li>
+                <li><button>Edit Hospital</button> <button>Delete Hospital</button></li>
+                <li><button>Leave a Review</button></li>
             </ul>
         </div>
     </div>

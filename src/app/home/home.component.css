@@ -4,7 +4,23 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: white;
+}
+.body{
+    font-size: 15pt;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;
+    color: #dca0f8;
+    position:relative;
+    top: -15px;
+}
+h2{
+    text-align: center;
+    font-size: 20pt;
+    color: #ae5b95;
+    font-weight: bold;
 }
 .navbar {
     display: flex;
@@ -17,6 +33,7 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
 .navbar ul {
     list-style: none;
     display: flex;
@@ -34,8 +51,7 @@ body {
 .call-to-action {
     text-align: center;
     padding: 2rem;
-    margin-top: 2rem;
-    background-color: #fff;
+    background-position: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .call-to-action h1 {
@@ -45,30 +61,58 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
+    background-color: white;
 }
 .tagline-mission {
-    width: 50%;
+    display: flex;
     padding: 1rem;
-    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-right: 1rem;
+    padding-bottom: 4rem;
+}
+.shrinkimg{
+    float: left;
+    width: 60%;
+    height: 75%;
+    margin-right: 20px;
+}
+
+.centerBox{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.special{
+    color:#dca0f8;
+    font-size:22pt;
 }
 .features {
-    width: 50%;
     padding: 1rem;
-    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #dca0f8;
 }
+
 .feature-item {
     padding: 0.5rem 0;
-    display: flex;
+    display: block;
     align-items: center;
+}
+.feature-item li{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 15px;
+}
+
+li img{
+    margin-left: auto;
+    margin-right: auto;
+    width:  50px; 
+    height: 50px;
 }
 .feature-item input[type="checkbox"] {
     margin-right: 0.5rem;
 }
 .footer {
-    background-color: #fff;
     text-align: center;
     padding: 1rem;
     margin-top: 1rem;

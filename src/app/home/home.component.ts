@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  imageURL: string ='assets/groupN.jpg';
+  houseURL: string='assets/house.png';
+  bellURL: string ='assets/bell.png';
+  mglassURL: string ='assets/mglass.png';
+  horizonURL: string ='assets/horizon.jpg';
 }
