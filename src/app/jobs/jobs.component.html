@@ -1,48 +1,125 @@
 <div class="main">
     <div class="content">
         <div class="search-section">
-            <label for="role">Role</label>
-            <select id="role">
-                <option value="rn">Registered Nurse (RN)</option>
-                <!-- Other options -->
-            </select>
-            <!-- More search fields -->
+            <!-- Search fields here -->
+            <input type="text" id="searchBox" placeholder="Hospital Name...">
             <button>Search</button>
+            <select name="professionFilter" id="professionFilter">
+                <option value="">Select Profession</option>
+                <option value="rn">Registered Nurse (RN)</option>
+                <option value="lpn">Licensed Practical Nurse (LPN)</option>
+                <!-- Add more profession options here -->
+            </select>
+
+            <select name="specialtyFilter" id="specialtyFilter">
+                <option value="">Select Specialty</option>
+                <option value="icu">ICU</option>
+                <option value="er">ER</option>
+                <!-- Add more specialty options here -->
+            </select>
+
+            <form id="salaryRangeForm">
+                <label for="minSalary">Min Salary:</label>
+                <input type="number" id="minSalary" name="minSalary" placeholder="0" min="0">
+
+                <label for="maxSalary">Max Salary:</label>
+                <input type="number" id="maxSalary" name="maxSalary" placeholder="100000" min="0">
+
+                <button type="submit">Filter</button>
+            </form>
         </div>
+        
         <div class="search-results">
             <table>
                 <thead>
                     <tr>
-                        <th>Profession</th>
-                        <th>Specialty</th>
-                        <th>Status</th>
-                        <th>Location</th>
+                        <th>Job Title</th>
                         <th>Pay</th>
+                        <th>Hours/Week</th>
+                        <th>Contract Length</th>
+                        <th>Hospital Name</th>
+                        <th>City, State</th> 
                         <th>More Info</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Registered Nurse (RN)</td>
-                        <td>ICU</td>
-                        <td>Currently Recruiting</td>
-                        <td>Morgan City Patterson</td>
-                        <td>$50-60/hr</td>
+                        <td>CNA</td>
+                        <td>5k per week</td>
+                        <td>36 hours a week</td>
+                        <td>13 weeks</td>
+                        <td>Lafayette Urgent Care</td>
+                        <td>Lafayette, LA</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
-                    <!-- More rows -->
+                    <tr>
+                        <td>Job 2</td>
+                        <td>Pay 2</td>
+                        <td>Hours2</td>
+                        <td>Duration2</td>
+                        <td>Hospital2</td>
+                        <td>Address2</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                   <tr>
+                        <td>Job 3</td>
+                        <td>Pay 3</td>
+                        <td>Hours3</td>
+                        <td>Duration3</td>
+                        <td>Hospital3</td>
+                        <td>Address3</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>Job 4</td>
+                        <td>Pay 4</td>
+                        <td>Hours4</td>
+                        <td>Duration4</td>
+                        <td>Hospital4</td>
+                        <td>Address4</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
+                    <tr>
+                        <td>Job 5</td>
+                        <td>Pay 5</td>
+                        <td>Hours5</td>
+                        <td>Duration5</td>
+                        <td>Hospital5</td>
+                        <td>Address5</td>
+                        <td><a href="#">More Info</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="sidebar">
-        <h3>Pinned Contracts</h3>
-        <ul>
-            <li>Pinned Contract Hospital Name</li>
-            <!-- More items -->
-        </ul>
+        <div class="more-info">
+            <h3>More Contract Info</h3>
+            <ul>
+                <li>Contract ID:</li>
+                <li>Contract Active? : (0/1)</li>
+                <li>HospitalName: [Name]</li>
+                <li>Full Address</li>
+                <li>Contact Info: [Email Address]</li>
+                
+                <li>Department</li>
+                <li>Req. Specialty</li>
+                <li>Req. Licences</li>
+                <li>Req. Certifications</li>
+                <li>Req. Degrees</li>
+                <li>Contract Details: [text]</li>
+                <li>Expiration</li>
+                
+                
+                <li><button>Apply</button> <button>Pin Contract</button></li>
+                <li><button>Edit Contract</button> <button>Delete Contract</button></li>
+            </ul>
+        </div>
     </div>
 </div>
-<div class="footer">
-    <p>Footer Content</p>
+<div class="pinnedBox">
+      <h3>Pinned Contracts</h3>
+</div>
+<div class="pinnedBox">
+      <h3>Pinned Housing Solutions</h3>
 </div>
