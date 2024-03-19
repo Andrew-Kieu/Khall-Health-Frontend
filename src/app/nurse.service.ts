@@ -10,11 +10,11 @@ import { tap } from 'rxjs';
 })
 export class NurseService {
 
-  private nurseURL = 'api/nurses';
+  private nurseURL = 'http://localhost:8080';
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  // };
 
   constructor(
     private http: HttpClient)
@@ -22,28 +22,24 @@ export class NurseService {
 
 
 
-  getNurses(): Observable<NursePageComponent[]> {
-    return this.http.get<NursePageComponent[]>(this.nurseURL)
-      .pipe(
-        tap(_ => this.log('fetched nurses')),
-        catchError(this.handleError)
-      );
+  // getNurses(): Observable<NursePageComponent[]> {
+  //   return this.http.get<NursePageComponent[]>(this.nurseURL)
+  //     .pipe(
+  //       tap(_ => this.log('fetched nurses')),
+  //       catchError(this.handleError)
+  //     );
+  // }
+
+  addNurse(nurse: any): Observable<any> {
+    return this.http.post(this.nurseURL + "/api/nurses", nurse);
   }
 
-  addNurse(nurse: NursePageComponent): Observable<NursePageComponent> {
-    return this.http.post<NursePageComponent>(this.nurseURL, nurse, this.httpOptions)
-      .pipe(
-        tap(_ => this.log('added nurse')),
-        catchError(this.handleError)
-      );
-  }
+  // private handleError(error: any): Observable<any> {
+  //   console.error('An error occurred:', error); // log to console instead
+  //   throw error; // Rethrow the error to propagate it further
+  // }
 
-  private handleError(error: any): Observable<any> {
-    console.error('An error occurred:', error); // log to console instead
-    throw error; // Rethrow the error to propagate it further
-  }
-
-  private log(message: string) {
-    console.log(message);
-  }
+  // private log(message: string) {
+  //   console.log(message);
+  // }
 }
