@@ -15,6 +15,6 @@ export const routes: Routes = [
     {path: 'contact', component: ContactComponent}, 
     {path: 'signIn', component: SignInComponent},
     {path: 'signOut', component: SignOutComponent},
-    {path: 'nurse-page', component: NursePageComponent}
+    {path: 'nurse-page', component: NursePageComponent},
     {path: 'hospital-search', component: HospitalSearchComponent}
 ];
