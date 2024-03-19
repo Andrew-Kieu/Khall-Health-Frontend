@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  imageUrlLeonard: string = 'assets/Leonard.png';
+  imageUrlAndrew: string = 'assets/AndrewDog.png';
+  imageUrlKobi: string = 'assets/Kobi.png';
+  imageUrlHayden: string = 'assets/HaydenDog.png';
+  imageUrlLucas: string = 'assets/LucasDog.png';
 
 }
