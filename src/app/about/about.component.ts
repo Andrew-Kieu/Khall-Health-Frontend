@@ -11,7 +11,7 @@ export class AboutComponent {
   imageUrlLeonard: string = 'assets/Leonard.png';
   imageUrlAndrew: string = 'assets/AndrewDog.png';
   imageUrlKobi: string = 'assets/Kobi.png';
-  imageUrlHayden: string = 'assets/HaydenDog.png';
+  imageUrlHayden: string = 'assets/Hayden.png';
   imageUrlLucas: string = 'assets/LucasDog.png';
 
 }
