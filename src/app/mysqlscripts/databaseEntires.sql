@@ -3,9 +3,9 @@ CREATE table nurse(
     firstName VARCHAR(30),
     lastName VARCHAR(30),
     email VARCHAR(30),
-    certifcations text,
+    certifications text,
     employment text,
-    licenseses text,
+    licenses text,
     degrees text,
     dateOfBirth date,
     professions VARCHAR(50),
@@ -23,7 +23,7 @@ CREATE table hospital(
     CONSTRAINT hopsital_PK PRIMARY key (hosptialID)
 );
 
-CREATE table contract(
+CREATE table contracts(
     contractID int Identity(1,1),
     contractDetails text,
     hiringRequirements text,
@@ -32,11 +32,11 @@ CREATE table contract(
     pay decimal(10,2),
     contractStatus text,
     CONSTRAINT contract_PK PRIMARY KEY (contractID),
-    CONSTRAINT contract_FK FOREIGN KEY (hosptialID)
+    CONSTRAINT hosptial_FK FOREIGN KEY (hosptialID)
         REFERENCES hospital(hosptialID)
 );
 
-CREATE table application(
+CREATE table applications(
     applicationID int Identity(1,1),
     appStatus text,
     profileID int NOT NULL,
@@ -44,7 +44,7 @@ CREATE table application(
     CONSTRAINT application_PK PRIMARY key (applicationID),
     CONSTRAINT nurse_FK FOREIGN KEY (profileID)
         References nurse(profileID),
-    CONSTRAINT contract_FK FOREIGN KEY (contractID)
-        REFERENCES contract(contractID)
+    CONSTRAINT contracts_FK FOREIGN KEY (contractID)
+        REFERENCES contracts(contractID)
 );
 
