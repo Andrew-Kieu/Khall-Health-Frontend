@@ -14,13 +14,13 @@ CREATE table nurse(
 
 
 CREATE table hospital(
-    hosptialID int Auto_increment,
+    hospitalID int Auto_increment,
     hospitalName VARCHAR(50),
     hospitalAddress VARCHAR(50),
     email VARCHAR(30),
     contracts int, 
     topReviews text,
-    CONSTRAINT hopsital_PK PRIMARY key (hosptialID)
+    CONSTRAINT hospital_PK PRIMARY key (hospitalID)
 );
 
 CREATE table contracts(
@@ -28,12 +28,12 @@ CREATE table contracts(
     contractDetails text,
     hiringRequirements text,
     expiration date,
-    hosptialID int,
+    hospitalID int,
     pay decimal(10,2),
     contractStatus text,
     CONSTRAINT contract_PK PRIMARY KEY (contractID),
-    CONSTRAINT hosptial_FK FOREIGN KEY (hosptialID)
-        REFERENCES hospital(hosptialID)
+    CONSTRAINT hospital_FK FOREIGN KEY (hospitalID)
+        REFERENCES hospital(hospitalID)
 );
 
 CREATE table applications(

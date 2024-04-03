@@ -48,22 +48,22 @@ VALUES ('Unity Health Center', '202 Pine Street', 'info@unityhealthcenter.com');
 -- contracts 
 
 -- Case 1: Inserting a contract with all attributes specified
-INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hosptialID, pay, contractStatus)
+INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hospitalID, pay, contractStatus)
 VALUES ('Contract for nursing services for the emergency department.', 'RN license required, BLS certification preferred.', '2025-12-31', 1, 35.00, 'Active');
 
 -- Case 2: Inserting a contract with all attributes specified
-INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hosptialID, pay, contractStatus)
+INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hospitalID, pay, contractStatus)
 VALUES ('Contract for nursing services for the surgical unit.', 'RN license required.', '2025-10-15', 2, 40.00, 'Active');
 
 -- Case 3: Inserting a contract with all attributes specified
-INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hosptialID, pay, contractStatus)
+INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hospitalID, pay, contractStatus)
 VALUES ('Contract for nursing services for the pediatric ward.', 'RN license required, Pediatric certification preferred.', '2026-03-01', 3, 38.00, 'Active');
 
 -- Case 4: Inserting a contract with all attributes specified
-INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hosptialID, pay, contractStatus)
+INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hospitalID, pay, contractStatus)
 VALUES ('Contract for nursing services for the maternity unit.', 'RN license and Labor and Delivery certification required.', '2025-09-30', 4, 45.00, 'Active');
 
 -- Case 5: Inserting a contract with all attributes specified
-INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hosptialID, pay, contractStatus)
+INSERT INTO contracts (contractDetails, hiringRequirements, expiration, hospitalID, pay, contractStatus)
 VALUES ('Contract for nursing services for the ICU.', 'RN license required, Critical Care certification preferred.', '2025-11-15', 5, 42.00, 'Active');
 
