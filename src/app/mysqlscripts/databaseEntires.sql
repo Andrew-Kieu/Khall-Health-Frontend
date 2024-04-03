@@ -1,5 +1,5 @@
 CREATE table nurse(
-    profileID int Identity(1,1),
+    profileID int Auto_increment,
     firstName VARCHAR(30),
     lastName VARCHAR(30),
     email VARCHAR(30),
@@ -14,7 +14,7 @@ CREATE table nurse(
 
 
 CREATE table hospital(
-    hosptialID int Identity(1,1),
+    hosptialID int Auto_increment,
     hospitalName VARCHAR(50),
     hospitalAddress VARCHAR(50),
     email VARCHAR(30),
@@ -24,7 +24,7 @@ CREATE table hospital(
 );
 
 CREATE table contracts(
-    contractID int Identity(1,1),
+    contractID int Auto_increment,
     contractDetails text,
     hiringRequirements text,
     expiration date,
@@ -37,10 +37,10 @@ CREATE table contracts(
 );
 
 CREATE table applications(
-    applicationID int Identity(1,1),
+    applicationID int Auto_increment,
     appStatus text,
     profileID int NOT NULL,
-    contractID int NOT NULL
+    contractID int NOT NULL,
     CONSTRAINT application_PK PRIMARY key (applicationID),
     CONSTRAINT nurse_FK FOREIGN KEY (profileID)
         References nurse(profileID),
