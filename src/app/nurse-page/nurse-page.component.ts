@@ -7,7 +7,8 @@ import { NgFor } from '@angular/common';
 import { StringifyOptions } from 'querystring';
 import { Nurse } from '../nurse';
 import { CommonModule } from '@angular/common';
-  
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
 
@@ -31,28 +32,29 @@ styleUrl: './nurse-page.component.css'
     selectedNurse: Nurse | null = null;
 
     constructor (private nurseService: NurseService){
-
     this.getNurses();
     this.selectedNurse = null;
-
     }
+    
 
-      
-
-    getNurses(){
-
-    this.nurseService.getNurses().subscribe((res) => {
-
-    console.log(res)
-
-    this.nurseArray = res;
-
-    })
+    getNurses() {
+      this.nurseService.getNurses().subscribe((nurses) => {
+        this.nurseArray = nurses;
+      }, error => {
+        console.error('Error fetching nurses', error);
+      });
     }
-
     
     showMoreInfo(nurse: Nurse): void {
       this.selectedNurse = nurse;
     }
 
 }
+
+
+/*getNurses(){
+      this.nurseService.getNurses().subscribe((res) => {
+      console.log(res)
+      this.nurseArray = res;
+      })
+    }*/

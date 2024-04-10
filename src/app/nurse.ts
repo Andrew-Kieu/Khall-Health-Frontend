@@ -10,7 +10,8 @@ export class Nurse {
     degrees: string[];
     city: string;
     state: string;
-    status: string;
+    employed: string;
+    lookingForWork: string;
     previousEmployment: string[];
     email: string;
     appliedToList: string[];
@@ -28,7 +29,8 @@ export class Nurse {
     degrees: string[],
     city: string,
     state: string,
-    status: string,
+    employed: string,
+    lookingForWork: string,
     previousEmployment: string[],
     email: string,
     appliedToList: string[]
@@ -46,7 +48,8 @@ export class Nurse {
     this.degrees = degrees;
     this.city = city;
     this.state = state;
-    this.status = status;
+    this.employed = employed;
+    this.lookingForWork = lookingForWork;
     this.previousEmployment = previousEmployment;
     this.email = email;
     this.appliedToList = appliedToList
