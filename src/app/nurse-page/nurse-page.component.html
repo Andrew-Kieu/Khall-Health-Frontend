@@ -113,12 +113,12 @@
         <div class="more-info" *ngIf="selectedNurse">
             <h3>More Nurse Info</h3>
             <ul>
-                <li>Nurse Name: {{ selectedNurse?.firstName }} {{ selectedNurse?.lastName }}</li>
-                <li>Home City, State: {{ selectedNurse?.city }}, {{ selectedNurse?.state }}</li>
-                <li>Employment Status: {{ selectedNurse?.status }}</li>
-                <li>Previous Employment: {{ selectedNurse?.previousEmployment }}</li>
-                <li>Contact Info: {{ selectedNurse?.email }}</li>
-                <li>Applied to: {{ selectedNurse?.appliedToList }}</li>
+                <li>Nurse Name: {{ selectedNurse.firstName }} {{ selectedNurse.lastName }}</li>
+                <li>Home City, State: {{ selectedNurse.city }}, {{ selectedNurse.state }}</li>
+                <li>Employment Status: {{ selectedNurse.status }}</li>
+                <li>Previous Employment: {{ selectedNurse.previousEmployment }}</li>
+                <li>Contact Info: {{ selectedNurse.email }}</li>
+                <li>Applied to: {{ selectedNurse.appliedToList }}</li>
                 <li><button>Edit Nurse</button> <button>Ask to Apply</button></li>
             </ul>
         </div>

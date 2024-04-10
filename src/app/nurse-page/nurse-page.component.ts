@@ -6,6 +6,7 @@ import { NurseService } from '../nurse.service';
 import { NgFor } from '@angular/common';
 import { StringifyOptions } from 'querystring';
 import { Nurse } from '../nurse';
+import { CommonModule } from '@angular/common';
   
 
 @Component({
@@ -14,7 +15,7 @@ selector: 'app-nurse-page',
 
 standalone: true,
 
-imports: [RouterModule, NgFor],
+imports: [RouterModule, NgFor, CommonModule],
 
 templateUrl: './nurse-page.component.html',
 
