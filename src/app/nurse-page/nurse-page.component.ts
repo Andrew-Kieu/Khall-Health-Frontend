@@ -22,15 +22,17 @@ styleUrl: './nurse-page.component.css'
 
 })
 
+
   export class NursePageComponent {
 
     nurseArray: Nurse[] = [];
 
-      
+    selectedNurse: Nurse | null = null;
 
     constructor (private nurseService: NurseService){
 
     this.getNurses();
+    this.selectedNurse = null;
 
     }
 
@@ -45,6 +47,12 @@ styleUrl: './nurse-page.component.css'
     this.nurseArray = res;
 
     })
+
+    
+    showMoreInfo(nurse: Nurse): void {
+      this.selectedNurse = nurse;
+    }
+
 
   }
 

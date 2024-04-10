@@ -11,6 +11,11 @@ header {
     text-align: center;
 }
 
+p {
+    text-align: center;
+    padding: 10px;
+}
+
 main {
     padding: 20px;
 }
@@ -31,11 +36,21 @@ h2 {
   display: flex;
 }
 
+.team {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 450px;
+}
+
 .team-member {
     text-align: center;
+    margin-left: 30px;
 }
 
 .team-member img {
+    padding-left: 40px;
+    vertical-align: middle;
+    text-align: center;
     width: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
