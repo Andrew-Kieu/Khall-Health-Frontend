@@ -47,13 +47,11 @@ styleUrl: './nurse-page.component.css'
     this.nurseArray = res;
 
     })
+    }
 
     
     showMoreInfo(nurse: Nurse): void {
       this.selectedNurse = nurse;
     }
-
-
-  }
 
 }
