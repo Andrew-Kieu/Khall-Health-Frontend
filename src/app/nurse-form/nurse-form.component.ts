@@ -30,7 +30,14 @@ export class NurseFormComponent {
       specialty: ['', [Validators.required]],
       licenses: ['', [Validators.required]], 
       certifications: ['', [Validators.required]],
-      degrees: ['', [Validators.required]], 
+      degrees: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      employed: ['', [Validators.required]],
+      lookingForWork: ['', [Validators.required]],
+      previousEmployment: ['', [Validators.required]],
+      email: ['', [Validators.required]], 
+      appliedToList: ['', [Validators.required]],
     });
   }
 

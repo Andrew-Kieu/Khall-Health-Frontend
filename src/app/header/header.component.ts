@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+<<<<<<< src/app/header/header.component.ts
 
 export class HeaderComponent implements OnInit {
   isCheckedIn: boolean = false;
@@ -46,4 +47,10 @@ export class HeaderComponent implements OnInit {
       this.router.navigateByUrl('/');
     }
   }
+  logoURL: string ='assets/KhallLogo1.png';
 }
+=======
+export class HeaderComponent {
+  logoURL: string ='assets/KhallLogo1.png';
+}
+>>>>>>> src/app/header/header.component.ts
