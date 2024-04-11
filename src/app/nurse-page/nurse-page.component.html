@@ -51,7 +51,9 @@
                         <!-- <td class="px-6 py-4 whitespace-nowrap">
                             <a href="{{ item.moreInfoLink }}" class="text-indigo-600 hover:text-indigo-900">More Info</a>
                         </td> -->
-                        <td class="px-6 py-4 whitespace-nowrap">More Info</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button (click)="showMoreInfo(nurse)">More Info</button>
+                        </td>
 
                     </tr>
                     <tr>
@@ -107,15 +109,17 @@
         </div>
     </div>
     <div class="sidebar">
-        <div class="more-info">
+        <!-- In the sidebar -->
+        <div class="more-info" *ngIf="selectedNurse">
             <h3>More Nurse Info</h3>
             <ul>
-                <li>Nurse Name: [Name]</li>
-                <li>Home City, State</li>
-                <li>Employment Status: Looking for Work</li>
-                <li>Previous Employment: [Details]</li>
-                <li>Contact Info: [Email Address]</li>
-                <li>Applied to: [List]</li>
+                <li>Nurse Name: {{ selectedNurse.firstName }} {{ selectedNurse.lastName }}</li>
+                <li>Home City, State: {{ selectedNurse.city }}, {{ selectedNurse.state }}</li>
+                <li>Employment Status: {{ selectedNurse.employed }}</li>
+                <li>Looking For Work: {{selectedNurse.lookingForWork }}</li>
+                <li>Previous Employment: {{ selectedNurse.previousEmployment }}</li>
+                <li>Contact Info: {{ selectedNurse.email }}</li>
+                <li>Applied to: {{ selectedNurse.appliedToList }}</li>
                 <li><button>Edit Nurse</button> <button>Ask to Apply</button></li>
             </ul>
         </div>

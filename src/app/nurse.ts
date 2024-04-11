@@ -8,6 +8,13 @@ export class Nurse {
     licenses: string[];
     certifications: string[];
     degrees: string[];
+    city: string;
+    state: string;
+    employed: string;
+    lookingForWork: string;
+    previousEmployment: string[];
+    email: string;
+    appliedToList: string[];
     
       
     
@@ -19,7 +26,14 @@ export class Nurse {
     specialty: string,
     licenses: string[],
     certifications: string[],
-    degrees: string[]
+    degrees: string[],
+    city: string,
+    state: string,
+    employed: string,
+    lookingForWork: string,
+    previousEmployment: string[],
+    email: string,
+    appliedToList: string[]
     
     ) {
     
@@ -32,6 +46,13 @@ export class Nurse {
     this.licenses = licenses;
     this.certifications = certifications;   
     this.degrees = degrees;
+    this.city = city;
+    this.state = state;
+    this.employed = employed;
+    this.lookingForWork = lookingForWork;
+    this.previousEmployment = previousEmployment;
+    this.email = email;
+    this.appliedToList = appliedToList
     } 
     }
     

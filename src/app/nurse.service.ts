@@ -4,23 +4,32 @@ import { NursePageComponent } from './nurse-page/nurse-page.component';
 import { Observable, catchError, of } from 'rxjs';
 import { map } from 'rxjs';
 import { tap } from 'rxjs';
+import { Nurse } from './nurse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NurseService {
+  get<T>(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
   private nurseURL = 'http://localhost:8080';
+  private dataPath = 'assets/nurse.json';
 
-  // httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  // };
+  
 
   constructor(
     private http: HttpClient)
   {}
 
-
+  getNurses(): Observable<Nurse[]> {
+    return this.http.get<Nurse[]>(this.dataPath);
+  }
+  
+// httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  // };
 
   // getNurses(): Observable<NursePageComponent[]> {
   //   return this.http.get<NursePageComponent[]>(this.nurseURL)
@@ -30,9 +39,9 @@ export class NurseService {
   //     );
   // }
   
-  getNurses(): Observable<any> {
+  /*getNurses(): Observable<any> {
     return this.http.get(this.nurseURL + "/api/nurses");
-  }
+  }*/
 
   addNurse(nurse: any): Observable<any> {
     return this.http.post(this.nurseURL + "/api/nurses", nurse);
