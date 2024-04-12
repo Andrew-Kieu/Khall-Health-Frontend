@@ -1,0 +1,28 @@
+.custom-gradient {
+    background: linear-gradient(to right, #E88AB3, #F0D9FF);
+  }
+  
+  .shape {
+    position: absolute;
+    opacity: 0.7;
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffc0cb; /* Example color */
+  }
+  
+  .rectangle {
+    width: 120px;
+    height: 60px;
+    background-color: #b19cd9; /* Example color */
+  }
+  
+  .square {
+    width: 90px;
+    height: 90px;
+    background-color: #f0d9ff; /* Example color */
+  }
+  
