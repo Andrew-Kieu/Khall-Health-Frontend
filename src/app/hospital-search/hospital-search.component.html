@@ -47,40 +47,25 @@
                         <td>1</td>
                         <td><a href="#">More Info</a></td>
                     </tr>
-                    <tr>
-                        <td>Hospital 2</td>
-                        <td>Name 2</td>
-                        <td>City,State 2</td>
-                        <td>hiringDepts 2</td>
-                        <td>Contracts: 2</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                   <tr>
-                        <td>Hospital 3</td>
-                        <td>Name 3</td>
-                        <td>City, State 3</td>
-                        <td>hiringDepts 3</td>
-                        <td>Contracts: 3</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>Hospital 4</td>
-                        <td>Name 4</td>
-                        <td>City, State 4</td>
-                        <td>hiringDepts 4</td>
-                        <td>Contracts: 4</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>Hospital 5</td>
-                        <td>Name 5</td>
-                        <td>City, State 5</td>
-                        <td>hiringDepts 5</td>
-                        <td>Contracts: 5</td>
-                        <td><a href="#">More Info</a></td>
+                    <!-- Additional rows omitted for brevity -->
+                </tbody>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr *ngFor="let hospital of hospitalArray">
+                        <td class="px-6 py-4 whitespace-nowrap">{{ hospital.id }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ hospital.name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ hospital.location }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ hospital.departmentsHiring }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ hospital.numberOfContracts }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button (click)="showMoreInfo(hospital)" class="text-indigo-600 hover:text-indigo-900">More Info</button>
+                        </td>
                     </tr>
                 </tbody>
+                
             </table>
+            <!-- Add Nurses Button -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="/hospital-form" >Add Hospital</button>
+
         </div>
     </div>
     <div class="sidebar">

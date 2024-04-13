@@ -5,11 +5,27 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    color: #333; /* Text color changed to dark for visibility without background */
     padding: 20px;
     text-align: center;
 }
+
+h1 {
+    font-size: 3em; /* Makes the "About Us" text larger */
+}
+
+h2 {
+    font-size: 32px; /* Adjusts the size to 32px which is often the size of a standard h1 */
+}
+hr {
+    border: none; /* Explicitly state there's no border */
+    height: 2px; /* Increase height for visibility */
+    background-color: #333; /* Ensure this color contrasts with the background */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 
 p {
     text-align: center;
@@ -62,3 +78,14 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+.custom-gradient {
+    background: linear-gradient(to right, #E88AB3, #F0D9FF); /* From light mulberry to light mauve */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* This will be overridden by the gradient */
+    background: linear-gradient(to right, #E88AB3, #F0D9FF); /* Gradient background */
+}
+

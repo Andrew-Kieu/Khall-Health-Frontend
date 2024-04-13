@@ -10,6 +10,8 @@ import { NurseFormComponent } from './nurse-form/nurse-form.component';
 import { SignUpComponent } from './sign-Up/sign-up.component';
 import { HospitalSearchComponent } from './hospital-search/hospital-search.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
+import { HospitalFormComponent } from './hospital-form/hospital-form.component';
+import path from 'path';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent}, 
@@ -23,4 +25,5 @@ export const routes: Routes = [
     {path: 'signUp', component: SignUpComponent},
     {path: 'hospital-search', component: HospitalSearchComponent},
     {path: 'application-search', component: ApplicationSearchComponent},
+    {path: 'hospital-form', component: HospitalFormComponent}
 ];
