@@ -50,34 +50,33 @@
     </div>
 
     <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
-     [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
-    <div class="p-4">
-        <h3 class="text-lg font-semibold text-gray-800">More Nurse Info</h3>
-        <ul class="mt-4">
-            <li class="py-2 border-b border-gray-300">Nurse Name: {{ selectedNurse?.firstName }} {{ selectedNurse?.lastName }}</li>
-            <li class="py-2 border-b border-gray-300">Specialty: {{ selectedNurse?.specialty }}</li>
-            <li class="py-2 border-b border-gray-300">Licenses: {{ selectedNurse?.licenses }}</li>
-            <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedNurse?.email }}</li>
-            <li class="flex justify-between items-center py-2">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
-                    (click)="editNurse()">Edit Nurse</button>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
-                    (click)="deleteNurse()">Delete Nurse</button>
-            </li>
-            <li class="py-2">
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
-                    (click)="askToApply()">Ask to Apply</button>
-            </li>
-        </ul>
-        <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
+        [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
+        <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">More Nurse Info</h3>
+            <ul class="mt-4">
+                <li class="py-2 border-b border-gray-300">Nurse Name: {{ selectedNurse?.firstName }} {{ selectedNurse?.lastName }}</li>
+                <li class="py-2 border-b border-gray-300">Specialty: {{ selectedNurse?.specialty }}</li>
+                <li class="py-2 border-b border-gray-300">Licenses: {{ selectedNurse?.licenses }}</li>
+                <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedNurse?.email }}</li>
+                <li class="flex justify-between items-center py-2">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+                        (click)="editNurse()">Edit Nurse</button>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+                        (click)="deleteNurse()">Delete Nurse</button>
+                </li>
+                <li class="py-2">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                        (click)="askToApply()">Ask to Apply</button>
+                </li>
+            </ul>
+            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
     </div>
-</div>
-
 </div>
 
 <!-- 
