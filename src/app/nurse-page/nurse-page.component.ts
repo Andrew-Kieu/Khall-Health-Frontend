@@ -25,31 +25,62 @@ styleUrl: './nurse-page.component.css'
 })
 
 
-  export class NursePageComponent {
+export class NursePageComponent {
 
-    nurseArray: Nurse[] = [];
+  nurseArray: Nurse[] = [];
+  selectedNurse: Nurse | null = null;
+  showSidebar = false;
 
-    selectedNurse: Nurse | null = null;
+  constructor(private nurseService: NurseService) {}
 
-    constructor (private nurseService: NurseService){
+  ngOnInit(): void {
     this.getNurses();
-    this.selectedNurse = null;
-    }
-    
+  }
 
-    getNurses() {
-      this.nurseService.getNurses().subscribe((nurses) => {
+  toggleSidebar(): void {
+    this.showSidebar = !this.showSidebar;
+  }
+
+
+  getNurses(): void {
+    this.nurseService.getNurses().subscribe(
+      (nurses) => {
         this.nurseArray = nurses;
-      }, error => {
+      },
+      (error) => {
         console.error('Error fetching nurses', error);
-      });
-    }
-    
-    showMoreInfo(nurse: Nurse): void {
-      this.selectedNurse = nurse;
-    }
+      }
+    );
+  }
 
+
+  
+
+  showMoreInfo(nurse: Nurse): void {
+    this.selectedNurse = nurse;
+    this.showSidebar = true; // Controls the visibility of the sidebar
+  }
+
+  closeSidebar(): void {
+    this.selectedNurse = null;
+    this.showSidebar = false;
+  }
+
+  editNurse(): void {
+    // Logic for editing a nurse
+  }
+
+  deleteNurse(): void {
+    // Logic for deleting a nurse
+  }
+
+  askToApply(): void {
+    // Logic for asking to apply
+  }
 }
+    
+
+
 
 
 /*getNurses(){

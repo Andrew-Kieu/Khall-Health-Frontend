@@ -29,8 +29,27 @@ export class HospitalSearchComponent {
     });
   }
   
+  // showMoreInfo(hospital: Hospital): void {
+  //   this.selectedHospital = hospital;
+  // }
+  showSidebar = false;
+
+
   showMoreInfo(hospital: Hospital): void {
     this.selectedHospital = hospital;
+    this.showSidebar = true;
+  }
+
+  editHospital(): void {
+    // Implementation for editing a hospital
+  }
+
+  deleteHospital(): void {
+    // Implementation for deleting a hospital
+  }
+
+  leaveReview(): void {
+    // Implementation for leaving a review
   }
     
 }

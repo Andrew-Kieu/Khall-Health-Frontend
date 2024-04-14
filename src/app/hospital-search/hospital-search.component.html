@@ -1,54 +1,43 @@
-<div class="main">
-    <div class="content">
-        <div class="search-section">
-            <!-- Search fields here -->
-            <input type="text" id="searchBox" placeholder="Hospital Name...">
-            <button>Search</button>
-            <select name="professionFilter" id="professionFilter">
+<div class="main py-8 bg-gray-50 min-h-screen">
+    <div class="content max-w-6xl mx-auto">
+        <div class="search-section mb-4 flex flex-wrap items-center justify-center gap-4">
+            <input type="text" id="searchBox" placeholder="Hospital Name..."
+                class="input bg-white border border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <button class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
+                Search
+            </button>
+            <select name="professionFilter" id="professionFilter"
+                class="select bg-white border border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <option value="">Select Profession</option>
                 <option value="rn">Registered Nurse (RN)</option>
                 <option value="lpn">Licensed Practical Nurse (LPN)</option>
-                <!-- Add more profession options here -->
             </select>
-
-            <select name="specialtyFilter" id="specialtyFilter">
+            <select name="specialtyFilter" id="specialtyFilter"
+                class="select bg-white border border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <option value="">Select Specialty</option>
                 <option value="icu">ICU</option>
                 <option value="er">ER</option>
-                <!-- Add more specialty options here -->
             </select>
-
-            <select name="statusFilter" id="statusFilter">
+            <select name="statusFilter" id="statusFilter"
+                class="select bg-white border border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <option value="">Select Status</option>
                 <option value="looking_for_work">Looking for Work</option>
                 <option value="employed">Employed</option>
-                <!-- Add more status options here -->
             </select>
         </div>
         
-        <div class="search-results">
-            <table>
-                <thead>
+        <div class="search-results bg-white shadow overflow-hidden rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-purple-500 text-white">
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th>Depts. Hiring</th>
-                        <th>#ofContracts</th>
-                        <th>More Info</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Name</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Location</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Depts. Hiring</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">#ofContracts</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">More Info</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>#12345</td>
-                        <td>Lafayette Urgent Care</td>
-                        <td>Lafayette, Louisiana</td>
-                        <td>ER, etc...</td>
-                        <td>1</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <!-- Additional rows omitted for brevity -->
-                </tbody>
                 <tbody class="bg-white divide-y divide-gray-200">
                     <tr *ngFor="let hospital of hospitalArray">
                         <td class="px-6 py-4 whitespace-nowrap">{{ hospital.id }}</td>
@@ -57,29 +46,46 @@
                         <td class="px-6 py-4 whitespace-nowrap">{{ hospital.departmentsHiring }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ hospital.numberOfContracts }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <button (click)="showMoreInfo(hospital)" class="text-indigo-600 hover:text-indigo-900">More Info</button>
+                            <button (click)="showMoreInfo(hospital)" class="text-indigo-600 hover:text-indigo-900 focus:outline-none">More Info</button>
                         </td>
                     </tr>
                 </tbody>
-                
             </table>
-            <!-- Add Nurses Button -->
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="/hospital-form" >Add Hospital</button>
+            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow"
+                routerLink="/hospital-form">Add Hospital</button>
+        </div>
+    </div>
 
-        </div>
+
+    
+    <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
+    [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
+    <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800">More Hospital Info</h3>
+        <ul class="mt-4">
+            <li class="py-2 border-b border-gray-300">Hospital ID: {{ selectedHospital?.id }}</li>
+            <li class="py-2 border-b border-gray-300">Hospital Name: {{ selectedHospital?.name }}</li>
+            <li class="py-2 border-b border-gray-300">Detailed Address: {{ selectedHospital?.detailedAddress }}</li>
+            <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedHospital?.contactEmail }}</li>
+            <li class="py-2 border-b border-gray-300">Contract Count: {{ selectedHospital?.numberOfContracts }}</li>
+            <li class="flex justify-between items-center py-2">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="editHospital()">Edit Hospital</button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="deleteHospital()">Delete Hospital</button>
+            </li>
+            <li class="py-2">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="leaveReview()">Leave a Review</button>
+            </li>
+        </ul>
+        <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
     </div>
-    <div class="sidebar">
-        <div class="more-info">
-            <h3>More Hospital Info</h3>
-            <ul>
-                <li>Hospital ID</li>
-                <li>HospitalName: [Name]</li>
-                <li>Detailed Address</li>
-                <li>Contact Info: [Email Address]</li>
-                <li>Contract Count</li>
-                <li><button>Edit Hospital</button> <button>Delete Hospital</button></li>
-                <li><button>Leave a Review</button></li>
-            </ul>
-        </div>
-    </div>
+</div>
+
 </div>
