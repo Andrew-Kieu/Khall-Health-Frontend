@@ -1,0 +1,61 @@
+<form *ngIf="editNurseForm" [formGroup]="editNurseForm" (ngSubmit)="updateNurse()">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" required>
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" required>
+    </div>
+    <div>
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" formControlName="profession" required>
+    </div>
+    <div>
+        <label for="specialty">Specialty:</label>
+        <input type="text" id="specialty" formControlName="specialty" required>
+    </div>
+    <div>
+        <label for="licenses">Licenses:</label>
+        <input type="text" id="licenses" formControlName="licenses" required>
+    </div>
+    <div>
+        <label for="certifications">Certifications:</label>
+        <input type="text" id="certifications" formControlName="certifications" required>
+    </div>
+    <div>
+        <label for="degrees">Degrees:</label>
+        <input type="text" id="degrees" formControlName="degrees" required>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" formControlName="city" required>
+    </div>
+    <div>
+        <label for="state">State:</label>
+        <input type="text" id="state" formControlName="state" required>
+    </div>
+    <div>
+        <label for="employed">Employed:</label>
+        <input type="text" id="employed" formControlName="employed" required>
+    </div>
+    <div>
+        <label for="lookingForWork">Looking For Work:</label>
+        <input type="text" id="lookingForWork" formControlName="lookingForWork" required>
+    </div>
+    <div>
+        <label for="previousEmployment">Previous Employment:</label>
+        <input type="text" id="previousEmployment" formControlName="previousEmployment" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required>
+    </div>
+    <div>
+        <label for="appliedToList">Applied To List:</label>
+        <input type="text" id="appliedToList" formControlName="appliedToList" required>
+    </div>
+
+
+    <button type="submit" [disabled]="editNurseForm.invalid">Update</button>
+</form>

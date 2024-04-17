@@ -24,35 +24,23 @@ export class NurseService {
   {}
 
   getNurses(): Observable<Nurse[]> {
-    return this.http.get<Nurse[]>(this.dataPath);
+    return this.http.get<Nurse[]>(this.nurseURL + "/api/nurses");
   }
   
-// httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  // };
-
-  // getNurses(): Observable<NursePageComponent[]> {
-  //   return this.http.get<NursePageComponent[]>(this.nurseURL)
-  //     .pipe(
-  //       tap(_ => this.log('fetched nurses')),
-  //       catchError(this.handleError)
-  //     );
-  // }
-  
-  /*getNurses(): Observable<any> {
-    return this.http.get(this.nurseURL + "/api/nurses");
-  }*/
+  getNurseById(nurseId: string): Observable<Nurse> {
+    return this.http.get<Nurse>(`${this.nurseURL}/api/nurses/${nurseId}`);
+  }
+  updateNurse(nurseId: string, updatedNurseData: any): Observable<any> {
+    return this.http.put(`${this.nurseURL}/api/nurses/${nurseId}`, updatedNurseData);
+  }
 
   addNurse(nurse: any): Observable<any> {
     return this.http.post(this.nurseURL + "/api/nurses", nurse);
   }
 
-  // private handleError(error: any): Observable<any> {
-  //   console.error('An error occurred:', error); // log to console instead
-  //   throw error; // Rethrow the error to propagate it further
-  // }
+  deleteNurse(nurseId: string): Observable<any> {
+    return this.http.delete(`${this.nurseURL}/api/nurses/${nurseId}`);
+  }
 
-  // private log(message: string) {
-  //   console.log(message);
-  // }
+
 }
