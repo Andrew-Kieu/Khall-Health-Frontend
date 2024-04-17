@@ -11,6 +11,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { Router } from '@angular/router';
+import { EditNurseComponent } from '../edit-nurse/edit-nurse.component';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
 
@@ -32,12 +36,24 @@ export class NursePageComponent {
   nurseArray: Nurse[] = [];
   selectedNurse: Nurse | null = null;
   showSidebar = false;
+  editingMode = false; // Flag to track if in editing mode
 
-  constructor(private nurseService: NurseService) {}
+
+  nurseForm: FormGroup = this.formBuilder.group({
+    id: [''], // Assuming you have an ID field for the nurse
+    // other form fields here
+  });
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private nurseService: NurseService,
+    private router: Router // Inject Router service
+  ) { }
 
   ngOnInit(): void {
     this.getNurses();
   }
+
 
   toggleSidebar(): void {
     this.showSidebar = !this.showSidebar;
@@ -81,8 +97,6 @@ export class NursePageComponent {
     });
   }
 
-  
-
   showMoreInfo(nurse: Nurse): void {
     this.selectedNurse = nurse;
     this.showSidebar = true; // Controls the visibility of the sidebar
@@ -93,19 +107,39 @@ export class NursePageComponent {
     this.showSidebar = false;
   }
 
-  editNurse(): void {
-    // Logic for editing a nurse
+  editNurse(nurseId: string) {
+    // Navigate to the editNurse route along with the nurse ID
+    this.router.navigate(['/editNurse', nurseId]);
   }
 
-  deleteNurse(): void {
-    // Logic for deleting a nurse
+  askToApply() {
+    // Implementation of the method goes here
+    console.log('Ask to Apply clicked'); // Example implementation
   }
 
-  askToApply(): void {
-    // Logic for asking to apply
+deleteNurse() {
+  if (confirm('Are you sure you want to delete this nurse?')) {
+    // Get nurse ID from the form or any other source
+    const nurseId = this.selectedNurse?.id; // Assuming there's an ID field in the form
+    // console.log(this.nurseForm.get('id')?.value);
+    if (nurseId) {
+      this.nurseService.deleteNurse(nurseId.toString()).subscribe(
+        () => {
+          console.log('Nurse deleted successfully');
+          // Optionally, reset the form or clear form fields
+        },
+        (error) => {
+          console.error('Error deleting nurse:', error);
+          // Handle error as needed
+        }
+      );
+    }
   }
 }
-    
+}
+
+
+  
 
 
 
@@ -116,3 +150,5 @@ export class NursePageComponent {
       this.nurseArray = res;
       })
     }*/
+
+  

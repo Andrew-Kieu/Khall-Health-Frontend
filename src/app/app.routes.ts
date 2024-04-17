@@ -12,6 +12,9 @@ import { HospitalSearchComponent } from './hospital-search/hospital-search.compo
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { HospitalFormComponent } from './hospital-form/hospital-form.component';
 import { JobFormComponent } from './job-form/job-form.component';
+import { ChoosingRoleComponent } from './choosing-role/choosing-role.component';
+import { HospitalSignUpComponent } from './hospital-sign-up/hospital-sign-up.component';
+import { EditNurseComponent } from './edit-nurse/edit-nurse.component';
 import { ToolsPageComponent } from './tools-page/tools-page.component';
 import path from 'path';
 
@@ -29,5 +32,9 @@ export const routes: Routes = [
     {path: 'application-search', component: ApplicationSearchComponent},
     {path: 'hospital-form', component: HospitalFormComponent},
     {path: 'job-form', component: JobFormComponent},
+    {path: 'choosing-role', component: ChoosingRoleComponent },
+    {path: 'hospital-signUp', component: HospitalSignUpComponent},
+    { path: 'editNurse/:id', component: EditNurseComponent },
+    // { path: 'editNurse/', component: EditNurseComponent },
     {path: 'tools-page', component: ToolsPageComponent}
 ];

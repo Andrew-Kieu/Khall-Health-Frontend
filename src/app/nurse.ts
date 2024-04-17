@@ -1,6 +1,6 @@
 export class Nurse {
 
-    //id: number;
+    id: number;
     firstName: string;
     lastName: string;
     profession: string;
@@ -19,7 +19,7 @@ export class Nurse {
       
     
     constructor(
-    // id: number,
+    id: number,
     firstName: string,
     lastName: string,
     profession: string,
@@ -37,7 +37,7 @@ export class Nurse {
     
     ) {
     
-    // this.id = id;
+     this.id = id;
     
     this.firstName = firstName;
     this.lastName = lastName;
