@@ -9,6 +9,8 @@ import { Nurse } from '../nurse';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { Router } from '@angular/router';
 import { EditNurseComponent } from '../edit-nurse/edit-nurse.component';
 import { FormGroup } from '@angular/forms';
@@ -68,7 +70,32 @@ export class NursePageComponent {
       }
     );
   }
-
+  
+  searchNurse(): void {
+    const query = (document.getElementById('searchBox') as HTMLInputElement).value.toLowerCase();
+    const professionFilter = (document.getElementById('professionFilter') as HTMLSelectElement).value;
+    const specialtyFilter = (document.getElementById('specialtyFilter') as HTMLSelectElement).value;
+    const statusFilter = (document.getElementById('statusFilter') as HTMLSelectElement).value;
+  
+    this.nurseService.getNurses().pipe(
+      map(nurses => {
+        return nurses.filter(nurse => {
+          // Filter by name
+          const nameMatch = nurse.firstName.toLowerCase().includes(query) || nurse.lastName.toLowerCase().includes(query);
+          // Filter by profession
+          const professionMatch = professionFilter === '' || nurse.profession.toLowerCase() === professionFilter;
+          // Filter by specialty
+          const specialtyMatch = specialtyFilter === '' || nurse.specialty.toLowerCase() === specialtyFilter;
+          // Filter by status
+          const statusMatch = statusFilter === '' || nurse.lookingForWork === statusFilter;
+  
+          return nameMatch && professionMatch && specialtyMatch && statusMatch;
+        });
+      })
+    ).subscribe(filteredNurses => {
+      this.nurseArray = filteredNurses;
+    });
+  }
 
   showMoreInfo(nurse: Nurse): void {
     this.selectedNurse = nurse;
