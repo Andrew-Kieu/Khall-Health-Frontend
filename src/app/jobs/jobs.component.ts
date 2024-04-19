@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
 import { JobService } from '../job.service';
 import { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NurseFormComponent } from '../nurse-form/nurse-form.component';
+import { NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { NurseService } from '../nurse.service';
 import { NgFor } from '@angular/common';
-import { Job } from '../job.service';
+import { StringifyOptions } from 'querystring';
+import { Nurse } from '../nurse';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { Router } from '@angular/router';
+import { EditNurseComponent } from '../edit-nurse/edit-nurse.component';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { Job } from '../job.service';
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf, RouterModule],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css'
 })
@@ -47,8 +62,24 @@ export class JobsComponent implements OnInit {
     // logic for editing a job
   }
 
-  deleteJob(): void {
-    // logic for deleting a job
+  deleteJob() {
+    if (confirm('Are you sure you want to delete this nurse?')) {
+      // Get nurse ID from the form or any other source
+      const jobId = this.selectedJob?.id; // Assuming there's an ID field in the form
+      // console.log(this.nurseForm.get('id')?.value);
+      if (jobId) {
+        this.jobService.deleteJob(jobId).subscribe(
+          () => {
+            console.log('Nurse deleted successfully');
+            // Optionally, reset the form or clear form fields
+          },
+          (error) => {
+            console.error('Error deleting nurse:', error);
+            // Handle error as needed
+          }
+        );
+      }
+    }
   }
 
   applyForJob(): void {

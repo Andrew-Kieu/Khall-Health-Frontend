@@ -55,8 +55,8 @@ export class JobService {
     console.error('An error occurred:', error.error.message);
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
-  updateJob(job: Job): Observable<Job> {
-    return this.http.put<Job>(`${this.apiUrl}/${job.id}`, job);
+  updateJob(jobId: number, updatedJobData: any): Observable<any> {
+    return this.http.put<any>(`/api/jobs/${jobId}`, updatedJobData);
   }
 
   deleteJob(id: number): Observable<void> {

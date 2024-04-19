@@ -7,7 +7,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { NursePageComponent } from './nurse-page/nurse-page.component';
 import { NurseFormComponent } from './nurse-form/nurse-form.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpComponent } from './sign-Up/sign-up.component';
 import { HospitalSearchComponent } from './hospital-search/hospital-search.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { HospitalFormComponent } from './hospital-form/hospital-form.component';
@@ -16,6 +16,8 @@ import { ChoosingRoleComponent } from './choosing-role/choosing-role.component';
 import { HospitalSignUpComponent } from './hospital-sign-up/hospital-sign-up.component';
 import { EditNurseComponent } from './edit-nurse/edit-nurse.component';
 import { ToolsPageComponent } from './tools-page/tools-page.component';
+import { EditHospitalComponent } from './edit-hospitals/edit-hospitals.component';
+import { EditJobsComponent } from './edit-jobs/edit-jobs.component';
 import path from 'path';
 
 export const routes: Routes = [
@@ -36,5 +38,7 @@ export const routes: Routes = [
     {path: 'hospital-signUp', component: HospitalSignUpComponent},
     { path: 'editNurse/:id', component: EditNurseComponent },
     // { path: 'editNurse/', component: EditNurseComponent },
-    {path: 'tools-page', component: ToolsPageComponent}
+    {path: 'tools-page', component: ToolsPageComponent},
+    {path: 'editHospital/:id', component: EditHospitalComponent },
+    {path: 'editJobs/:id', component: EditJobsComponent}
 ];

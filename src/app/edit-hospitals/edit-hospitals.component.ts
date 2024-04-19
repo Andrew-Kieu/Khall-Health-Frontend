@@ -8,17 +8,17 @@ import { Validator } from '@angular/forms'
 import { Nurse } from '../nurse';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-edit-nurse',
+  selector: 'app-edit-hospitals',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
-  templateUrl: './edit-nurse.component.html',
-  styleUrl: './edit-nurse.component.css'
+  imports: [NgIf, ReactiveFormsModule],
+  templateUrl: './edit-hospitals.component.html',
+  styleUrl: './edit-hospitals.component.css'
 })
-export class EditNurseComponent implements OnInit {
-  successMessage: string | null = null; // Added successMessage property
+export class EditHospitalComponent implements OnInit {
   editNurseForm: FormGroup | null = null;
   nurseId: string | null = null;
 
@@ -29,6 +29,9 @@ export class EditNurseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Get the nurse ID from the route parameters
+    
+    // Initialize the form with empty fields
     this.editNurseForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -48,12 +51,15 @@ export class EditNurseComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.nurseId = params['id'];
+      // Retrieve nurse details by ID and populate the form
       this.populateForm();
     });
+  
   }
 
   populateForm() {
     if (this.nurseId && this.editNurseForm) {
+      // Retrieve nurse details by ID and populate the form
       this.nurseService.getNurseById(this.nurseId).subscribe((nurse: Nurse) => {
         if (this.editNurseForm) {
           this.editNurseForm.patchValue({
@@ -79,15 +85,16 @@ export class EditNurseComponent implements OnInit {
 
   updateNurse() {
     if (this.editNurseForm) {
+      // Update nurse details
       const updatedNurseData = this.editNurseForm.value;
       this.nurseService.updateNurse(this.nurseId!, updatedNurseData).subscribe(
-        (response: any) => {
+        (response: any) => { // Define the type of response explicitly
           console.log('Nurse updated successfully:', response);
-          // Assuming you want to display a success message
-          this.successMessage = 'Nurse updated successfully.';
+          // Handle success as needed
         },
         (error) => {
           console.error('Error updating nurse:', error);
+          // Handle error as needed
         }
       );
     }

@@ -1,61 +1,63 @@
-<form *ngIf="editNurseForm" [formGroup]="editNurseForm" (ngSubmit)="updateNurse()">
-    <div>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" formControlName="firstName" required>
-    </div>
-    <div>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" formControlName="lastName" required>
-    </div>
-    <div>
-        <label for="profession">Profession:</label>
-        <input type="text" id="profession" formControlName="profession" required>
-    </div>
-    <div>
-        <label for="specialty">Specialty:</label>
-        <input type="text" id="specialty" formControlName="specialty" required>
-    </div>
-    <div>
-        <label for="licenses">Licenses:</label>
-        <input type="text" id="licenses" formControlName="licenses" required>
-    </div>
-    <div>
-        <label for="certifications">Certifications:</label>
-        <input type="text" id="certifications" formControlName="certifications" required>
-    </div>
-    <div>
-        <label for="degrees">Degrees:</label>
-        <input type="text" id="degrees" formControlName="degrees" required>
-    </div>
-    <div>
-        <label for="city">City:</label>
-        <input type="text" id="city" formControlName="city" required>
-    </div>
-    <div>
-        <label for="state">State:</label>
-        <input type="text" id="state" formControlName="state" required>
-    </div>
-    <div>
-        <label for="employed">Employed:</label>
-        <input type="text" id="employed" formControlName="employed" required>
-    </div>
-    <div>
-        <label for="lookingForWork">Looking For Work:</label>
-        <input type="text" id="lookingForWork" formControlName="lookingForWork" required>
-    </div>
-    <div>
-        <label for="previousEmployment">Previous Employment:</label>
-        <input type="text" id="previousEmployment" formControlName="previousEmployment" required>
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" required>
-    </div>
-    <div>
-        <label for="appliedToList">Applied To List:</label>
-        <input type="text" id="appliedToList" formControlName="appliedToList" required>
-    </div>
+<div class="p-4">
+    <div *ngIf="successMessage" class="text-green-500">{{ successMessage }}</div>
+    <form *ngIf="editNurseForm" [formGroup]="editNurseForm" (ngSubmit)="updateNurse()" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required formControlName="firstName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required formControlName="lastName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="profession" class="block text-gray-700 text-sm font-bold mb-2">Profession:</label>
+            <input type="text" id="profession" name="profession" required formControlName="profession" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="specialty" class="block text-gray-700 text-sm font-bold mb-2">Specialty:</label>
+            <input type="text" id="specialty" name="specialty" required formControlName="specialty" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="licenses" class="block text-gray-700 text-sm font-bold mb-2">Licenses:</label>
+            <input type="text" id="licenses" name="licenses" required formControlName="licenses" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="certifications" class="block text-gray-700 text-sm font-bold mb-2">Certifications:</label>
+            <input type="text" id="certifications" name="certifications" required formControlName="certifications" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="degrees" class="block text-gray-700 text-sm font-bold mb-2">Degrees:</label>
+            <input type="text" id="degrees" name="degrees" required formControlName="degrees" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City:</label>
+            <input type="text" id="city" name="city" required formControlName="city" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="state" class="block text-gray-700 text-sm font-bold mb-2">State:</label>
+            <input type="text" id="state" name="state" required formControlName="state" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="employed" class="block text-gray-700 text-sm font-bold mb-2">Employed:</label>
+            <input type="text" id="employed" name="employed" required formControlName="employed" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="lookingForWork" class="block text-gray-700 text-sm font-bold mb-2">Looking For Work:</label>
+            <input type="text" id="lookingForWork" name="lookingForWork" required formControlName="lookingForWork" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="previousEmployment" class="block text-gray-700 text-sm font-bold mb-2">Previous Employment:</label>
+            <input type="text" id="previousEmployment" name="previousEmployment" required formControlName="previousEmployment" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+            <input type="text" id="email" name="email" required formControlName="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="appliedToList" class="block text-gray-700 text-sm font-bold mb-2">Applied To List:</label>
+            <input type="text" id="appliedToList" name="appliedToList" required formControlName="appliedToList" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
 
-
-    <button type="submit" [disabled]="editNurseForm.invalid">Update</button>
-</form>
+        <button type="submit" [disabled]="editNurseForm.invalid" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
+    </form>
+</div>
