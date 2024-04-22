@@ -58,4 +58,8 @@ export class StorageService {
   getAuthState(): Observable<boolean> {
     return this.authState.asObservable();
   }
+
+  setCurrentUser(user: any): void {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
 }

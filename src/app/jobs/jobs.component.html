@@ -43,16 +43,35 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
+            <button *ngIf="isHospital()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
         </div>
     </div>
+    
+
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+
 
     <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
          [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
         <div class="p-4">
             <h3 class="text-lg font-semibold text-gray-800">More Job Info</h3>
-            <!-- Additional info about jobs goes here -->
-            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
+            <ul class="mt-4">
+                <li class="py-2 border-b border-gray-300">Job Title: {{ selectedJob?.title }}</li>
+                <li class="py-2 border-b border-gray-300">Pay: {{ selectedJob?.pay }}</li>
+                <li class="py-2 border-b border-gray-300">Hours/Week: {{ selectedJob?.hoursPerWeek }}</li>
+                <li class="py-2 border-b border-gray-300">Contract Length: {{ selectedJob?.contractLength }}</li>
+                <li class="py-2 border-b border-gray-300">Hospital Name: {{ selectedJob?.hospitalName }}</li>
+
+                
+                <li class="py-2 border-b border-gray-300">
+                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                </li>
+                <li class="py-2 border-b border-gray-300">
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
+                </li>
+            </ul>
+            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="closeSidebar()">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                         d="M6 18L18 6M6 6l12 12" />
@@ -60,7 +79,39 @@
             </button>
         </div>
     </div>
+
+
+
+
+<!-- <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
+     [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
+    <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800">More Job Info</h3>
+        <div *ngIf="selectedJob">
+            <p>Title: {{ selectedJob?.title }}</p>
+            <p>Pay: {{ selectedJob?.pay }}</p>
+            <p>Hours/Week: {{ selectedJob?.hoursPerWeek }}</p>
+            <p>Contract Length: {{ selectedJob?.contractLength }}</p>
+            <p>Hospital Name: {{ selectedJob?.hospitalName }}</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded" (click)="editJob()">Edit Job</button>
+                </li>
+                <li class="py-2 border-b border-gray-300">
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
+                </li>
+            </ul>
+            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="closeSidebar()">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div> -->
+<!-- End Sidebar -->
+
+    <!-- End Sidebar -->
 </div>
+
 
 
             <!-- <tr>
