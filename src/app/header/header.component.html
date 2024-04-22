@@ -6,7 +6,6 @@
                 <a href="#" class="text-white text-lg font-semibold">
                     <!-- Adjust width and height as needed -->
                     <img [src]="logoURL" alt="logo" style="width: 70px; height: 65px; margin-top: 8px;">
-
                 </a>
             </div>
 
@@ -19,11 +18,69 @@
                 <a routerLink="/hospital-search" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hospitals</a>
                 <a routerLink="/application-search" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Applications</a>
                 <a routerLink="/tools-page" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tools</a>
-                <!-- <a routerLink="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a> -->
             </div>
 
             <!-- Right-aligned Auth Links -->
             <div class="flex items-center">
+                <ng-container *ngIf="isAuthenticated">
+                  <span class="text-gray-300 px-3 py-2 text-sm font-medium">Welcome, {{ getUserDisplayName() }}</span>
+                  <button (click)="signOut()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Out</button>
+                </ng-container>
+          
+                <ng-container *ngIf="!isAuthenticated">
+                  <a routerLink="/signIn" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
+                  <a routerLink="/choosing-role" class="bg-white text-gray-800 px-4 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="bg-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">
+            <div class="flex justify-between h-24">
+                <a href="#" class="text-white text-lg font-semibold">
+                    <img [src]="logoURL" alt="logo" style="width: 70px; height: 65px; margin-top: 8px;">
+
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-4"> 
+                <a routerLink="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a routerLink="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a routerLink="/jobs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs</a>
+                <a routerLink="/nurse-page" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nurses</a>
+                <a routerLink="/hospital-search" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hospitals</a>
+                <a routerLink="/application-search" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Applications</a>
+                <a routerLink="/tools-page" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tools</a>
+            </div>
+
+
+
+
+            <div class="flex items-center">
+                    <span class="text-gray-300 px-3 py-2 text-sm font-medium">Welcome,</span>
+                    <button (click)="signOut()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Out</button>
+                </ng-container>
+                
+                <ng-template #showAuthLinks>
+                    <a routerLink="/signIn" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
+                    <a routerLink="/choosing-role" class="bg-white text-gray-800 px-4 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                </ng-template>
+            </div> -->
+
+            <!-- <div class="flex items-center">
                 <ng-container *ngIf="isCheckedIn; else showAuthLinks">
                     <span class="text-gray-300 px-3 py-2 text-sm font-medium">Welcome, {{ username }}</span>
                     <button (click)="signOut()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Out</button>
@@ -33,7 +90,7 @@
                     <a routerLink="/signIn" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
                     <a routerLink="/choosing-role" class="bg-white text-gray-800 px-4 py-2 rounded-md text-sm font-medium">Sign Up</a>
                 </ng-template>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div>
     </div>
-</nav>
+</nav> -->

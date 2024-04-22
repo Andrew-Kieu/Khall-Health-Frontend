@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 import { EditNurseComponent } from '../edit-nurse/edit-nurse.component';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
 
@@ -22,7 +23,7 @@ selector: 'app-nurse-page',
 
 standalone: true,
 
-imports: [RouterModule, NgFor, CommonModule],
+imports: [RouterModule, NgFor, CommonModule, NgIf],
 
 templateUrl: './nurse-page.component.html',
 
@@ -135,6 +136,16 @@ deleteNurse() {
       );
     }
   }
+}
+
+isNurse(): boolean {
+  // Check if localStorage is available
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('role') ===  "nurse") {
+    // Retrieve user data from localStorage
+    return true;
+   
+  }
+  return false; // Default to false if user data is not available or if the user's role is not "nurse"
 }
 }
 

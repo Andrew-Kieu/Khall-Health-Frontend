@@ -43,7 +43,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
+            <button *ngIf="isHospital()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
         </div>
     </div>
     
@@ -65,7 +65,7 @@
 
                 
                 <li class="py-2 border-b border-gray-300">
-                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id">Edit</a>
+                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
                 </li>
                 <li class="py-2 border-b border-gray-300">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>

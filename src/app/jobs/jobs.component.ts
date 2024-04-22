@@ -81,7 +81,30 @@ export class JobsComponent implements OnInit {
       }
     }
   }
+  isHospital(): boolean {
 
+    
+      // Check if localStorage is available
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('role') === 'hospital') {
+      // Retrieve user data from localStorage
+      // const storedUser = localStorage.getItem('currentUser');
+      // if (storedUser) {
+      //   const user = JSON.parse(storedUser);
+      //   return user.role === 'hospital';
+      // }
+      return true;
+    }
+    // if (typeof localStorage !== 'undefined') {
+    //   // Retrieve user data from localStorage
+    //   const storedUser = localStorage.getItem('currentUser');
+    //   if (storedUser) {
+    //     const user = JSON.parse(storedUser);
+    //     return user.role === 'hospital';
+    //   }
+    // }
+    return false; // Default to false if user data is not available or if the user's role is not "hospital"
+  }
+  
   applyForJob(): void {
     // logic for applying for a job
   }

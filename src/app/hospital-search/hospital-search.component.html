@@ -48,7 +48,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" routerLink="/hospital-form">Add Hospital</button>
+            <button *ngIf="isHospital()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" routerLink="/hospital-form">Add Hospital</button>
         </div>
     </div>
 
@@ -66,12 +66,11 @@
                 <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
             (click)="editHospital(selectedHospital?.id)">Edit Hospital</button> -->
 
-            <a *ngIf="selectedHospital !== null && selectedHospital !== undefined" [routerLink]="'/editNurse/' + selectedHospital?.id">Edit</a>
+            <a *ngIf="selectedHospital !== null && selectedHospital !== undefined" [routerLink]="'/editNurse/' + selectedHospital?.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
 
 
                 <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
                     (click)="deleteHospital()">Delete Hospital</button>
-            </li>
             <li class="py-2">
                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
                     (click)="leaveReview()">Leave a Review</button>
