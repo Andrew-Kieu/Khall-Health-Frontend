@@ -9,7 +9,7 @@ import { NursePageComponent } from './nurse-page/nurse-page.component';
 import { NurseFormComponent } from './nurse-form/nurse-form.component';
 import { SignUpComponent } from './sign-Up/sign-up.component';
 import { HospitalSearchComponent } from './hospital-search/hospital-search.component';
-import { ApplicationSearchComponent } from './application-search/application-search.component';
+// import { ApplicationPageComponent } from './application-search/application-search.component';
 import { HospitalFormComponent } from './hospital-form/hospital-form.component';
 import { JobFormComponent } from './job-form/job-form.component';
 import { ChoosingRoleComponent } from './choosing-role/choosing-role.component';
@@ -31,13 +31,13 @@ export const routes: Routes = [
     {path: 'nurse-form', component: NurseFormComponent},
     {path: 'signUp', component: SignUpComponent},
     {path: 'hospital-search', component: HospitalSearchComponent},
-    {path: 'application-search', component: ApplicationSearchComponent},
+    // {path: 'application-search', component: ApplicationPageComponent},
     {path: 'hospital-form', component: HospitalFormComponent},
     {path: 'job-form', component: JobFormComponent},
     {path: 'choosing-role', component: ChoosingRoleComponent },
     {path: 'hospital-signUp', component: HospitalSignUpComponent},
     { path: 'editNurse/:id', component: EditNurseComponent },
-    // { path: 'editNurse/', component: EditNurseComponent },
+    { path: 'editNurse/', component: EditNurseComponent },
     {path: 'tools-page', component: ToolsPageComponent},
     {path: 'editHospital/:id', component: EditHospitalComponent },
     {path: 'editJobs/:id', component: EditJobsComponent}
