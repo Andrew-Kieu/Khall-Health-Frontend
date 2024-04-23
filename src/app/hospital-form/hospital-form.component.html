@@ -1,0 +1,77 @@
+<div class="p-4">
+    <div *ngIf="successMessage" class="text-green-500">{{ successMessage }}</div>
+    <form [formGroup]="hospitalForm" (ngSubmit)="sendHospital()" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label for="hospitalName" class="block text-gray-700 text-sm font-bold mb-2">Hospital Name</label>
+            <input type="text" id="hospitalName" name="hospitalName" required formControlName="hospitalName"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City</label>
+            <input type="text" id="city" name="city" required formControlName="city"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="deptsHiring" class="block text-gray-700 text-sm font-bold mb-2">Departments Hiring</label>
+            <input type="text" id="deptsHiring" name="deptsHiring" required formControlName="deptsHiring"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="numberOfContracts" class="block text-gray-700 text-sm font-bold mb-2">Number of Contracts</label>
+            <input type="text" id="numberOfContracts" name="numberOfContracts" required formControlName="numberOfContracts"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="hospitalAddress" class="block text-gray-700 text-sm font-bold mb-2">Hospital Address</label>
+            <input type="text" id="hospitalAddress" name="hospitalAddress" required formControlName="hospitalAddress"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="hospitalEmail" class="block text-gray-700 text-sm font-bold mb-2">Hospital Email</label>
+            <input type="email" id="hospitalEmail" name="hospitalEmail" required formControlName="hospitalEmail"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <button type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+</div>
+
+
+
+<!-- <div class="p-4">
+    <div *ngIf="successMessage" class="text-green-500">{{ successMessage }}</div>
+    <form [formGroup]="hospitalForm" (ngSubmit)="sendHospital()" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Hospital Name</label>
+            <input type="text" id="name" name="name" required formControlName="name"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="location" class="block text-gray-700 text-sm font-bold mb-2">Location</label>
+            <input type="text" id="location" name="location" required formControlName="location"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="departmentsHiring" class="block text-gray-700 text-sm font-bold mb-2">Departments Hiring</label>
+            <input type="text" id="departmentsHiring" name="departmentsHiring" required formControlName="departmentsHiring"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="numberOfContracts" class="block text-gray-700 text-sm font-bold mb-2">Number of Contracts</label>
+            <input type="text" id="numberOfContracts" name="numberOfContracts" required formControlName="numberOfContracts"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="detailedAddress" class="block text-gray-700 text-sm font-bold mb-2">Detailed Address</label>
+            <input type="text" id="detailedAddress" name="detailedAddress" required formControlName="detailedAddress"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="contactEmail" class="block text-gray-700 text-sm font-bold mb-2">Contact Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" required formControlName="contactEmail"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <button type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+</div> -->

@@ -1,123 +1,123 @@
-<div class="main">
-    <div class="content">
-        <div class="search-section">
-            <!-- Search fields here -->
-            <input type="text" id="searchBox" placeholder="Nurse Name...">
-            <button>Search</button>
-            <select name="professionFilter" id="professionFilter">
-                <option value="">Select Profession</option>
-                <option value="rn">Registered Nurse (RN)</option>
-                <option value="lpn">Licensed Practical Nurse (LPN)</option>
-                <!-- Add more profession options here -->
-            </select>
-
-            <select name="specialtyFilter" id="specialtyFilter">
-                <option value="">Select Specialty</option>
-                <option value="icu">ICU</option>
-                <option value="er">ER</option>
-                <!-- Add more specialty options here -->
-            </select>
-
-            <select name="statusFilter" id="statusFilter">
-                <option value="">Select Status</option>
-                <option value="looking_for_work">Looking for Work</option>
-                <option value="employed">Employed</option>
-                <!-- Add more status options here -->
-            </select>
+<div class="main py-8 bg-gray-50 min-h-screen">
+    <div class="content max-w-6xl mx-auto">
+        <div class="search-section bg-white p-4 rounded-lg shadow-md">
+            <div class="flex flex-wrap gap-4 mb-4">
+                <input type="text" id="searchBox" placeholder="Nurse Name..." class="flex-grow p-2 border rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+                <select name="professionFilter" id="professionFilter" class="flex-grow p-2 border rounded">
+                    <option value="">Select Profession</option>
+                    <option value="rn">Registered Nurse (RN)</option>
+                    <option value="lpn">Licensed Practical Nurse (LPN)</option>
+                </select>
+                <select name="specialtyFilter" id="specialtyFilter" class="flex-grow p-2 border rounded">
+                    <option value="">Select Specialty</option>
+                    <option value="icu">ICU</option>
+                    <option value="er">ER</option>
+                </select>
+                <select name="statusFilter" id="statusFilter" class="flex-grow p-2 border rounded">
+                    <option value="">Select Status</option>
+                    <option value="looking_for_work">Looking for Work</option>
+                    <option value="employed">Employed</option>
+                </select>
+            </div>
         </div>
         
-        <div class="search-results">
+        <div class="search-results bg-white shadow overflow-hidden rounded-lg mt-4">
             <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+                <thead class="bg-purple-500 text-white">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Profession</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Licenses</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Certifications</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Degrees</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">More Info</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Name</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Profession</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Specialty</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Licenses</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">More Info</th>
                     </tr>
                 </thead>
-
                 <tbody class="bg-white divide-y divide-gray-200">
                     <tr *ngFor="let nurse of nurseArray">
+                        
                         <td class="px-6 py-4 whitespace-nowrap">{{ nurse.firstName }} {{ nurse.lastName }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ nurse.profession }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ nurse.specialty }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ nurse.licenses }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ nurse.certifications }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ nurse.degrees }}</td>
-                        <!-- <td class="px-6 py-4 whitespace-nowrap">
-                            <a href="{{ item.moreInfoLink }}" class="text-indigo-600 hover:text-indigo-900">More Info</a>
-                        </td> -->
-                        <td class="px-6 py-4 whitespace-nowrap">More Info</td>
-
-                    </tr>
-                    <tr>
-                        <td>Violet</td>
-                        <td>RN</td>
-                        <td>ICU</td>
-                        <td>RN-CNA</td>
-                        <td>ACRN</td>
-                        <td>BSN</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>Rose</td>
-                        <td>Prof2</td>
-                        <td>Spec2</td>
-                        <td>Lics2</td>
-                        <td>Cert2</td>
-                        <td>Degs2</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                   <tr>
-                        <td>Daisy</td>
-                        <td>Prof3</td>
-                        <td>Spec3</td>
-                        <td>Lics3</td>
-                        <td>Cert3</td>
-                        <td>Degs3</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Green</td>
-                        <td>Prof4</td>
-                        <td>Spec4</td>
-                        <td>Lics4</td>
-                        <td>Cert4</td>
-                        <td>Degs4</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mr.Pink</td>
-                        <td>Prof5</td>
-                        <td>Spec5</td>
-                        <td>Lics5</td>
-                        <td>Cert5</td>
-                        <td>Degs5</td>
-                        <td><a href="#">More Info</a></td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button (click)="showMoreInfo(nurse)" class="text-indigo-600 hover:text-indigo-900 focus:outline-none">More Info</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="/nurse-form">Add nurse</button>
-
+            <button *ngIf="isNurse()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" routerLink="/nurse-form">Add Nurse</button>
         </div>
     </div>
-    <div class="sidebar">
-        <div class="more-info">
-            <h3>More Nurse Info</h3>
-            <ul>
-                <li>Nurse Name: [Name]</li>
-                <li>Home City, State</li>
-                <li>Employment Status: Looking for Work</li>
-                <li>Previous Employment: [Details]</li>
-                <li>Contact Info: [Email Address]</li>
-                <li>Applied to: [List]</li>
-                <li><button>Edit Nurse</button> <button>Ask to Apply</button></li>
-            </ul>
-        </div>
+
+    <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
+     [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
+    <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800">More Nurse Info</h3>
+        <ul class="mt-4">
+            <!-- Ensure selectedNurse is not null or undefined before accessing its properties -->
+            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.id }}</li>
+
+            <li class="py-2 border-b border-gray-300">Nurse Name: {{ selectedNurse?.firstName }} {{selectedNurse?.id}} {{ selectedNurse?.lastName }} </li>
+            <li class="py-2 border-b border-gray-300">Specialty: {{ selectedNurse?.specialty }}</li>
+            <li class="py-2 border-b border-gray-300">Licenses: {{ selectedNurse?.licenses }}</li>
+            <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedNurse?.email }}</li>
+            <!-- Ensure selectedNurse is not null or undefined before accessing its properties -->
+            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.id }}</li>
+
+            <li class="flex justify-between items-center py-2">
+                <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="selectedNurse && selectedNurse.id && editNurse(selectedNurse.id.toString())">Edit Nurse</button> -->
+                        <a *ngIf="selectedNurse !== null && selectedNurse !== undefined" [routerLink]="'/editNurse/' + selectedNurse.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                    
+                                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="deleteNurse()">Delete Nurse</button>
+            </li>
+            <li class="py-2">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                    (click)="askToApply()">Ask to Apply</button>
+            </li>
+        </ul>
+        <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
     </div>
 </div>
+
+</div>
+
+<!-- 
+<div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
+[class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
+<div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-800">More Hospital Info</h3>
+    <ul class="mt-4">
+        <li class="py-2 border-b border-gray-300">Hospital ID: {{ selectedHospital?.id }}</li>
+        <li class="py-2 border-b border-gray-300">Hospital Name: {{ selectedHospital?.name }}</li>
+        <li class="py-2 border-b border-gray-300">Detailed Address: {{ selectedHospital?.detailedAddress }}</li>
+        <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedHospital?.contactEmail }}</li>
+        <li class="py-2 border-b border-gray-300">Contract Count: {{ selectedHospital?.numberOfContracts }}</li>
+        <li class="flex justify-between items-center py-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+                (click)="editHospital()">Edit Hospital</button>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+                (click)="deleteHospital()">Delete Hospital</button>
+        </li>
+        <li class="py-2">
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                (click)="leaveReview()">Leave a Review</button>
+        </li>
+    </ul>
+    <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="showSidebar = false">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+</div>
+</div>
+
+</div> -->

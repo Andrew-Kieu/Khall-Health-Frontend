@@ -1,0 +1,71 @@
+<div class="p-4">
+    <div *ngIf="successMessage" class="text-green-500">{{ successMessage }}</div>
+    <form *ngIf="jobForm" [formGroup]="jobForm" (ngSubmit)="updateJob()" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Job Title:</label>
+            <input type="text" id="title" name="title" required formControlName="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="hospitalName" class="block text-gray-700 text-sm font-bold mb-2">Hospital Name:</label>
+            <input type="text" id="hospitalName" name="hospitalName" required formControlName="hospitalName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="detailedAddress" class="block text-gray-700 text-sm font-bold mb-2">Detailed Address:</label>
+            <input type="text" id="detailedAddress" name="detailedAddress" required formControlName="detailedAddress" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="contactEmail" class="block text-gray-700 text-sm font-bold mb-2">Contact Email:</label>
+            <input type="email" id="contactEmail" name="contactEmail" required formControlName="contactEmail" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="department" class="block text-gray-700 text-sm font-bold mb-2">Department:</label>
+            <input type="text" id="department" name="department" required formControlName="department" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="requiredSpecialty" class="block text-gray-700 text-sm font-bold mb-2">Required Specialty:</label>
+            <input type="text" id="requiredSpecialty" name="requiredSpecialty" required formControlName="requiredSpecialty" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="requiredLicenses" class="block text-gray-700 text-sm font-bold mb-2">Required Licenses:</label>
+            <input type="text" id="requiredLicenses" name="requiredLicenses" required formControlName="requiredLicenses" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="requiredCertifications" class="block text-gray-700 text-sm font-bold mb-2">Required Certifications:</label>
+            <input type="text" id="requiredCertifications" name="requiredCertifications" required formControlName="requiredCertifications" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="requiredDegrees" class="block text-gray-700 text-sm font-bold mb-2">Required Degrees:</label>
+            <input type="text" id="requiredDegrees" name="requiredDegrees" required formControlName="requiredDegrees" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="details" class="block text-gray-700 text-sm font-bold mb-2">Details:</label>
+            <textarea id="details" name="details" required formControlName="details" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="expiration" class="block text-gray-700 text-sm font-bold mb-2">Expiration:</label>
+            <input type="text" id="expiration" name="expiration" required formControlName="expiration" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="pay" class="block text-gray-700 text-sm font-bold mb-2">Pay:</label>
+            <input type="number" id="pay" name="pay" required formControlName="pay" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="hoursPerWeek" class="block text-gray-700 text-sm font-bold mb-2">Hours Per Week:</label>
+            <input type="number" id="hoursPerWeek" name="hoursPerWeek" required formControlName="hoursPerWeek" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="contractLength" class="block text-gray-700 text-sm font-bold mb-2">Contract Length:</label>
+            <input type="number" id="contractLength" name="contractLength" required formControlName="contractLength" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="hospitalId" class="block text-gray-700 text-sm font-bold mb-2">Hospital ID:</label>
+            <input type="number" id="hospitalId" name="hospitalId" required formControlName="hospitalId" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="isActive" class="block text-gray-700 text-sm font-bold mb-2">Is Active:</label>
+            <input type="checkbox" id="isActive" name="isActive" formControlName="isActive" class="form-checkbox h-5 w-5 text-blue-600">
+        </div>
+
+        <button type="submit" [disabled]="jobForm.invalid" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
+    </form>
+</div>

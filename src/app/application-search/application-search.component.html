@@ -1,88 +1,80 @@
-<div class="main">
-    <div class="content">
-        <div class="search-section">
-            <input type="text" id="searchBox1" placeholder="Application ID...">
-            <button>Search</button>
-            <input type="text" id="searchBox2" placeholder="Nurse/Hospital Name...">
-            <button>Search</button>
-            <select name="Status" id="statusFilter">
-                <option value="-1">Select Status</option>
-                <option value="0">Ongoing</option>
-                <option value="1">Accepted</option>
-                <option value="2">Not Accepted</option>
-                <!-- Add more status options here -->
-            </select>
+<div class="main py-8 bg-gray-50 min-h-screen">
+    <div class="content max-w-6xl mx-auto">
+        <div class="search-section bg-white p-4 rounded-lg shadow-md">
+            <div class="flex flex-wrap gap-4 mb-4">
+                <input type="text" id="searchBox1" placeholder="Application ID..." class="flex-grow p-2 border rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+                <input type="text" id="searchBox2" placeholder="Nurse/Hospital Name..." class="flex-grow p-2 border rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+                <select name="Status" id="statusFilter" class="flex-grow p-2 border rounded">
+                    <option value="-1">Select Status</option>
+                    <option value="0">Ongoing</option>
+                    <option value="1">Accepted</option>
+                    <option value="2">Not Accepted</option>
+                    <!-- Add more status options here -->
+                </select>
+            </div>
         </div>
-        
-        <div class="search-results">
-            <table>
-                <thead>
+        <!-- Search Results Table -->
+        <div class="search-results bg-white shadow overflow-hidden rounded-lg mt-4">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-purple-500 text-white">
                     <tr>
-                        <th>Application ID</th>
-                        <th>Status</th>
-                        <th>Nurse Name</th>
-                        <th>Hospital Name</th>
-                        <th>Contact Expiration</th>
-                        <th>More Info</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Application ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contact ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nurse ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Date Made</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Accepted</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white divide-y divide-gray-200">
                     <tr>
-                        <td>A#12345</td>
-                        <td>Ongoing</td>
-                        <td>Samantha Salad</td>
-                        <td>Lafayette Urgent Care</td>
-                        <td>November 1, 2024</td>
-                        <td><a href="#">More Info</a></td>
+                      <td class="px-6 py-4 whitespace-nowrap">100010001</td>
+                      <td class="px-6 py-4 whitespace-nowrap">101000004</td>
+                      <td class="px-6 py-4 whitespace-nowrap">100000002</td>
+                      <td class="px-6 py-4 whitespace-nowrap">2024-04-22</td>
+                      <td class="px-6 py-4 whitespace-nowrap">Accepted</td>
                     </tr>
                     <tr>
-                        <td>ID 2</td>
-                        <td>Status 2</td>
-                        <td>Nurse Name 2</td>
-                        <td>Hospital Name 2</td>
-                        <td>Expiration 2</td>
-                        <td><a href="#">More Info</a></td>
+                      <td class="px-6 py-4 whitespace-nowrap">100010002</td>
+                      <td class="px-6 py-4 whitespace-nowrap">101000002</td>
+                      <td class="px-6 py-4 whitespace-nowrap">100000001</td>
+                      <td class="px-6 py-4 whitespace-nowrap">2023-12-13</td>
+                      <td class="px-6 py-4 whitespace-nowrap">Not Accepted</td>
                     </tr>
                     <tr>
-                        <td>ID 3</td>
-                        <td>Status 3</td>
-                        <td>Nurse Name 3</td>
-                        <td>Hospital Name 3</td>
-                        <td>Expiration 3</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>ID 4</td>
-                        <td>Status 4</td>
-                        <td>Nurse Name 4</td>
-                        <td>Hospital Name 4</td>
-                        <td>Expiration 4</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                    <tr>
-                        <td>ID 5</td>
-                        <td>Status 5</td>
-                        <td>Nurse Name 5</td>
-                        <td>Hospital Name 5</td>
-                        <td>Expiration 5</td>
-                        <td><a href="#">More Info</a></td>
-                    </tr>
-                </tbody>
+                        <td class="px-6 py-4 whitespace-nowrap">100010003</td>
+                        <td class="px-6 py-4 whitespace-nowrap">101000001</td>
+                        <td class="px-6 py-4 whitespace-nowrap">100000006</td>
+                        <td class="px-6 py-4 whitespace-nowrap">2024-03-25</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Accepted</td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">100010004</td>
+                        <td class="px-6 py-4 whitespace-nowrap">101000005</td>
+                        <td class="px-6 py-4 whitespace-nowrap">100000005</td>
+                        <td class="px-6 py-4 whitespace-nowrap">2024-01-23</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Not Accepted</td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">100010005</td>
+                        <td class="px-6 py-4 whitespace-nowrap">101000001</td>
+                        <td class="px-6 py-4 whitespace-nowrap">100000001</td>
+                        <td class="px-6 py-4 whitespace-nowrap">2023-11-29</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Accepted</td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">100010006</td>
+                        <td class="px-6 py-4 whitespace-nowrap">101000003</td>
+                        <td class="px-6 py-4 whitespace-nowrap">100000002</td>
+                        <td class="px-6 py-4 whitespace-nowrap">2024-02-05</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Not Accepted</td>
+                      </tr>
+                  </tbody>
             </table>
         </div>
     </div>
-    <div class="sidebar">
-        <div class="more-info">
-            <h3>More Application Info</h3>
-            <ul>
-                <li>Application ID</li>
-                <li>Hospital ID</li>
-                <li>HospitalName: [Name]</li>
-                <li>Detailed Address</li>
-                <li>Nurse ID</li>
-                <li>NurseName: [Name]</li>
-                <li><button>Edit Application</button> <button>Delete Application</button></li>
-            </ul>
-        </div>
-    </div>
+
+    <!-- Sidebar for more information -->
+    <!-- ... -->
 </div>

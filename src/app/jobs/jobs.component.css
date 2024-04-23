@@ -1,8 +1,8 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
 }
 .header, .main, .sidebar, .footer {
-    border: 1px solid #000; /* Visible divisions */
+    border: 1px solid #000; 
     margin: 10px;
     padding: 10px;
 }
@@ -25,14 +25,14 @@ body {
     margin-right: 20px;
 }
 .sidebar {
-    width: 250px; /* Fixed width for the sidebar */
+    width: 250px; 
 }
 table {
     width: 100%;
     border-collapse: collapse;
 }
 th, td {
-    border: 1px solid #000; /* Visible divisions */
+    border: 1px solid #000; 
     text-align: left;
     padding: 8px;
 }
@@ -68,4 +68,4 @@ button {
   display: flex;
   margin: 10px;
   padding: 10px;
-}
+} */

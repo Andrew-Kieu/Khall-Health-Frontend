@@ -7,11 +7,12 @@ import { HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, HomeComponent,HttpClientModule],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, HomeComponent,HttpClientModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
