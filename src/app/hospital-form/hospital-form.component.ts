@@ -21,15 +21,15 @@ export class HospitalFormComponent implements OnInit {
   constructor(
     private hospitalService: HospitalService, 
     private formBuilder: FormBuilder,
-    private router: Router // Inject Router if you need to navigate after form submission
+    private router: Router
   ) {
     this.hospitalForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      location: ['', Validators.required],
-      departmentsHiring: ['', Validators.required],
+      hospitalName: ['', Validators.required],
+      hospitalAddress: ['', Validators.required],
+      deptsHiring: ['', Validators.required],
       numberOfContracts: ['', Validators.required],
-      detailedAddress: ['', Validators.required],
-      contactEmail: ['', [Validators.required, Validators.email]]
+      city: ['', Validators.required],
+      hospitalEmail: ['', [Validators.required, Validators.email]]
     });
   }
 
@@ -40,21 +40,19 @@ export class HospitalFormComponent implements OnInit {
   sendHospital() {
     this.submitted = true;
     if (this.hospitalForm.invalid) {
-      return; // Stops the form submission if the form is invalid
+      return;
     }
 
     this.hospitalService.createHospital(this.hospitalForm.value).subscribe(
       (response) => {
         console.log('Hospital added successfully:', response);
         this.successMessage = 'Hospital added successfully';
-        this.hospitalForm.reset(); // Resets the form after successful submission
-        this.submitted = false; // Resets the submission state
-        // Optionally navigate to another route
-        // this.router.navigate(['/hospital-list']); // Example of navigation after submission
+        this.hospitalForm.reset();
+        this.submitted = false;
       },
       (error) => {
         console.error('Error adding hospital:', error);
-        this.successMessage = 'Failed to add hospital. Please check your entries.'; // Updates the success message to show error
+        this.successMessage = 'Failed to add hospital. Please check your entries.';
       }
     );
   }

@@ -33,21 +33,22 @@ export class EditJobsComponent {
 
   ngOnInit(): void {
     this.jobForm = this.formBuilder.group({
-      title: ['', Validators.required],
+      contractId: [null],
+      hospitalId: ['', Validators.required],
       hospitalName: ['', Validators.required],
-      detailedAddress: ['', Validators.required],
-      contactEmail: ['', [Validators.required, Validators.email]],
+      title: ['', Validators.required],
+      hospitalAddress: ['', Validators.required],
+      hospitalEmail: ['', [Validators.required, Validators.email]],
       department: ['', Validators.required],
-      requiredSpecialty: ['', Validators.required],
-      requiredLicenses: ['', Validators.required],
-      requiredCertifications: ['', Validators.required],
-      requiredDegrees: ['', Validators.required],
+      specialtyReq: ['', Validators.required],
+      licenseReq: ['', Validators.required],
+      certificationReq: ['', Validators.required],
+      degreeReq: ['', Validators.required],
       details: ['', Validators.required],
-      expiration: ['', Validators.required],
-      pay: ['', [Validators.required, Validators.min(0)]],
+      contractExpiration: ['', Validators.required],
+      payPerWeek: ['', [Validators.required, Validators.min(0)]],
       hoursPerWeek: ['', [Validators.required, Validators.min(1)]],
       contractLength: ['', [Validators.required, Validators.min(1)]],
-      hospitalId: [null, Validators.required],
       isActive: [true]
     });
 

@@ -63,7 +63,7 @@
 
                 
                 <li class="py-2 border-b border-gray-300">
-                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.contractId" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
                 </li>
                 <li class="py-2 border-b border-gray-300">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
@@ -149,7 +149,7 @@
 
                 
                 <li class="py-2 border-b border-gray-300">
-                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.contractId" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
                 </li>
                 <li class="py-2 border-b border-gray-300">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>

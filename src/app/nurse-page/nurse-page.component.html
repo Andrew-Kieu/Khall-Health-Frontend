@@ -56,19 +56,19 @@
         <h3 class="text-lg font-semibold text-gray-800">More Nurse Info</h3>
         <ul class="mt-4">
             <!-- Ensure selectedNurse is not null or undefined before accessing its properties -->
-            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.id }}</li>
+            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.nurseId }}</li>
 
-            <li class="py-2 border-b border-gray-300">Nurse Name: {{ selectedNurse?.firstName }} {{selectedNurse?.id}} {{ selectedNurse?.lastName }} </li>
+            <li class="py-2 border-b border-gray-300">Nurse Name: {{ selectedNurse?.firstName }} {{selectedNurse?.nurseId}} {{ selectedNurse?.lastName }} </li>
             <li class="py-2 border-b border-gray-300">Specialty: {{ selectedNurse?.specialty }}</li>
             <li class="py-2 border-b border-gray-300">Licenses: {{ selectedNurse?.licenses }}</li>
             <li class="py-2 border-b border-gray-300">Contact Info: {{ selectedNurse?.email }}</li>
             <!-- Ensure selectedNurse is not null or undefined before accessing its properties -->
-            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.id }}</li>
+            <li class="py-2 border-b border-gray-300">Nurse ID: {{ selectedNurse?.nurseId }}</li>
 
             <li class="flex justify-between items-center py-2">
                 <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
                     (click)="selectedNurse && selectedNurse.id && editNurse(selectedNurse.id.toString())">Edit Nurse</button> -->
-                        <a *ngIf="selectedNurse !== null && selectedNurse !== undefined" [routerLink]="'/editNurse/' + selectedNurse.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                        <a *ngIf="selectedNurse !== null && selectedNurse !== undefined" [routerLink]="'/editNurse/' + selectedNurse.nurseId" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
                     
                                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
                     (click)="deleteNurse()">Delete Nurse</button>
