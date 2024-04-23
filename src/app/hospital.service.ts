@@ -4,13 +4,25 @@ import { Observable } from 'rxjs';
 
 // Define the Hospital interface directly in the service file
 export interface Hospital {
-  id?: number;
-  name: string;
-  location: string;
-  departmentsHiring: string;
+  // id?: number;
+  // name: string;
+  // location: string;
+  // departmentsHiring: string;
+  // numberOfContracts: number;
+  // detailedAddress: string;
+  // contactEmail: string;
+
+
+  hospitalId?: number;
+  hospitalName: string;
+  hospitalAddress: string;
+  deptsHiring: string;
   numberOfContracts: number;
-  detailedAddress: string;
-  contactEmail: string;
+  city: string;
+  hospitalEmail: string;
+  topReviews: string;
+
+
 }
 
 @Injectable({

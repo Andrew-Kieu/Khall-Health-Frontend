@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Application {
-  id?: number;
-  status: string;
-  applicationDate: Date;
-  lastUpdated: Date;
+  applicationId: number;
+  contractId: number;
+  nurseId: number;
   hospitalName: string;
   contactExpiration: Date;
+  datMade: Date;
+  accepted: boolean;
+ 
   // Add other fields as necessary
 }
 

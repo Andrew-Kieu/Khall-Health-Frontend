@@ -18,7 +18,7 @@ export interface Job {
   requiredDegrees: string;
   details: string;
   expiration: string;
-  pay: number;
+  payPerWeek: number;
   hoursPerWeek: number;
   contractLength: number;
   isActive: boolean;
