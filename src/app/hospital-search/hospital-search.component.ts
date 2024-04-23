@@ -77,7 +77,7 @@ export class HospitalSearchComponent  implements OnInit {
 
   deleteHospital(): void {
     if (confirm('Are you sure you want to delete this hospital?')) {
-      const hospitalId = this.selectedHospital?.id;
+      const hospitalId = this.selectedHospital?.hospitalId;
       if (hospitalId) {
         this.hospitalService.deleteHospital(hospitalId).subscribe(
           () => {
