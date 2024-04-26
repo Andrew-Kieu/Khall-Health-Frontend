@@ -6,22 +6,23 @@ import { catchError } from 'rxjs';
 import { throwError } from 'rxjs';
 
 export interface Job {
-  id: number;
-  title: string;
+  contractId: number;
+  hospitalId: string;
   hospitalName: string;
-  detailedAddress: string;
-  contactEmail: string;
+  title: string;
+  hospitalAddress: string;
+  hospitalEmail: string;
   department: string;
-  requiredSpecialty: string;
-  requiredLicenses: string;
-  requiredCertifications: string;
-  requiredDegrees: string;
+  specialtyReq: string;
+  licenseReq: string;
+  certificationReq: string;
+  degreeReq: string;
   details: string;
-  expiration: string;
+  contractExpiration: number;
   payPerWeek: number;
   hoursPerWeek: number;
   contractLength: number;
-  isActive: boolean;
+  isActive: boolean
 
 }
 

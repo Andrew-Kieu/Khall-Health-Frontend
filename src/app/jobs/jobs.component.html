@@ -1,14 +1,46 @@
-<div class="main py-8 bg-gray-50 min-h-screen">
+<div class="main py-8 bg-gray-50 min-h-screen" style="background: linear-gradient(to right, #E88AB3, #F0D9FF); 
+border-bottom: 2px solid black;">
+
+    <h1>
+        Jobs
+    </h1>
+    <section>
+        <div class="centerbox">
+            <h2>Find the career path that is right for you</h2>
+            <p> Here hospitals can add job listing to our list for applicants to apply to. </p>
+            <p> Nurses will have to opportunity to view various job offerings offered my hospitals all over Louisiana!
+            </p>
+        </div>
+    </section>
+
     <div class="content max-w-6xl mx-auto">
         <div class="search-section bg-white p-4 rounded-lg shadow-md">
             <div class="flex flex-wrap gap-4 mb-4">
-                <input type="text" id="searchBox" placeholder="Job Title..." class="flex-grow p-2 border rounded">
+                <input type="text" id="searchBox" placeholder="Job Title / Id..." class="flex-grow p-2 border rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+                <input type="text" id="searchBox" placeholder="Hospital Name/Id..." class="flex-grow p-2 border rounded">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
                 <select name="professionFilter" id="professionFilter" class="flex-grow p-2 border rounded">
                     <option value="">Select Profession</option>
                     <option value="rn">Registered Nurse (RN)</option>
                     <option value="lpn">Licensed Practical Nurse (LPN)</option>
                 </select>
+                <div>
+                <span class="font-bold text-gray-700">Pay per week:</span>
+                <form class="flex gap-4 items-center">
+                    <div>
+                        <label for="minPay" class="block text-sm font-medium text-gray-700">Min ($)</label>
+                        <input type="number" id="minPay" name="minPay" placeholder="0" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm text-gray-700">
+                    </div>
+                    <div>
+                        <label for="maxPay" class="block text-sm font-medium text-gray-700">Max ($)</label>
+                        <input type="number" id="maxPay" name="maxPay" placeholder="2000" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm text-gray-700">
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Apply
+                    </button>
+                </form>   
+                </div>    
                 <select name="specialtyFilter" id="specialtyFilter" class="flex-grow p-2 border rounded">
                     <option value="">Select Specialty</option>
                     <option value="icu">ICU</option>
@@ -22,7 +54,7 @@
                 <thead class="bg-purple-500 text-white">
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Job Title</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pay</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pay/Week</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Hours/Week</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contract Length</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Hospital Name</th>
@@ -45,9 +77,6 @@
             <button *ngIf="isHospital()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
         </div>
     </div>
-    
-
-    
 
 
     <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
@@ -55,18 +84,28 @@
         <div class="p-4">
             <h3 class="text-lg font-semibold text-gray-800">More Job Info</h3>
             <ul class="mt-4">
+                <li class="py-2 border-b border-gray-300">Contract Id: {{ selectedJob?.hospitalId }}</li>
+                <li class="py-2 border-b border-gray-300">Hospital Id: {{ selectedJob?.contractId }}</li>
                 <li class="py-2 border-b border-gray-300">Job Title: {{ selectedJob?.title }}</li>
                 <li class="py-2 border-b border-gray-300">Pay: {{ selectedJob?.payPerWeek }}</li>
                 <li class="py-2 border-b border-gray-300">Hours/Week: {{ selectedJob?.hoursPerWeek }}</li>
                 <li class="py-2 border-b border-gray-300">Contract Length: {{ selectedJob?.contractLength }}</li>
                 <li class="py-2 border-b border-gray-300">Hospital Name: {{ selectedJob?.hospitalName }}</li>
+                <li class="py-2 border-b border-gray-300">Requirements: {{ selectedJob?.degreeReq }}</li>
+                <li class="py-2 border-b border-gray-300">License Requirements: {{ selectedJob?.licenseReq }}</li>
+                <li class="py-2 border-b border-gray-300">Certification Requirements: {{ selectedJob?.certificationReq }}</li>
+                <li class="py-2 border-b border-gray-300">Specialty Requirements: {{ selectedJob?.specialtyReq }}</li>
 
                 
                 <li class="py-2 border-b border-gray-300">
-                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.contractId" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
+                    <button class="bg-green-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded">Apply</button>
                 </li>
                 <li class="py-2 border-b border-gray-300">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
+                </li>
+                <li class="py-2 border-b border-gray-300">
+                    <button class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded">Housing Solution</button>
                 </li>
             </ul>
             <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="closeSidebar()">
@@ -77,135 +116,4 @@
             </button>
         </div>
     </div>
-
-
-
 </div>
-
-
-<div class="main py-8 bg-gray-50 min-h-screen">
-    <div class="content max-w-6xl mx-auto">
-        <div class="search-section bg-white p-4 rounded-lg shadow-md">
-            <div class="flex flex-wrap gap-4 mb-4">
-                <input type="text" id="searchBox" placeholder="Job Title..." class="flex-grow p-2 border rounded">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
-                <select name="professionFilter" id="professionFilter" class="flex-grow p-2 border rounded">
-                    <option value="">Select Profession</option>
-                    <option value="rn">Registered Nurse (RN)</option>
-                    <option value="lpn">Licensed Practical Nurse (LPN)</option>
-                </select>
-                <select name="specialtyFilter" id="specialtyFilter" class="flex-grow p-2 border rounded">
-                    <option value="">Select Specialty</option>
-                    <option value="icu">ICU</option>
-                    <option value="er">ER</option>
-                </select>
-            </div>
-        </div>
-        
-        <div class="search-results bg-white shadow overflow-hidden rounded-lg mt-4">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-purple-500 text-white">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Job Title</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Pay</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Hours/Week</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contract Length</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Hospital Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">City, State</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">More Info</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr *ngFor="let job of jobsArray">
-                        <td class="px-6 py-4 whitespace-nowrap">{{ job.title }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ job.payPerWeek }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ job.hoursPerWeek }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ job.contractLength }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ job.hospitalName }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <button (click)="showMoreInfo(job)" class="text-indigo-600 hover:text-indigo-900 focus:outline-none">More Info</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <button *ngIf="isHospital()" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" (click)="addJobForm()">Add Job</button>
-        </div>
-    </div>
-    
-
-    
-
-
-    <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
-         [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
-        <div class="p-4">
-            <h3 class="text-lg font-semibold text-gray-800">More Job Info</h3>
-            <ul class="mt-4">
-                <li class="py-2 border-b border-gray-300">Job Title: {{ selectedJob?.title }}</li>
-                <li class="py-2 border-b border-gray-300">Pay: {{ selectedJob?.payPerWeek }}</li>
-                <li class="py-2 border-b border-gray-300">Hours/Week: {{ selectedJob?.hoursPerWeek }}</li>
-                <li class="py-2 border-b border-gray-300">Contract Length: {{ selectedJob?.contractLength }}</li>
-                <li class="py-2 border-b border-gray-300">Hospital Name: {{ selectedJob?.hospitalName }}</li>
-
-                
-                <li class="py-2 border-b border-gray-300">
-                    <a *ngIf="selectedJob !== null && selectedJob !== undefined" [routerLink]="'/editJobs/' + selectedJob.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">Edit</a>
-                </li>
-                <li class="py-2 border-b border-gray-300">
-                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
-                </li>
-            </ul>
-            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="closeSidebar()">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-    </div>
-
-
-
-</div>
-<!-- <div class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300"
-     [class.translate-x-full]="!showSidebar" [class.translate-x-0]="showSidebar">
-    <div class="p-4">
-        <h3 class="text-lg font-semibold text-gray-800">More Job Info</h3>
-        <div *ngIf="selectedJob">
-            <p>Title: {{ selectedJob?.title }}</p>
-            <p>Pay: {{ selectedJob?.pay }}</p>
-            <p>Hours/Week: {{ selectedJob?.hoursPerWeek }}</p>
-            <p>Contract Length: {{ selectedJob?.contractLength }}</p>
-            <p>Hospital Name: {{ selectedJob?.hospitalName }}</p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded" (click)="editJob()">Edit Job</button>
-                </li>
-                <li class="py-2 border-b border-gray-300">
-                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded" (click)="deleteJob()">Delete Job</button>
-                </li>
-            </ul>
-            <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" (click)="closeSidebar()">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-    </div> -->
-<!-- End Sidebar -->
-
-    <!-- End Sidebar -->
-
-
-
-
-            <!-- <tr>
-    <td>CNA</td>
-    <td>5k per week</td>
-    <td>36 hours a week</td>
-    <td>13 weeks</td>
-    <td>Lafayette Urgent Care</td>
-    <td>Lafayette, LA</td>
-    <td><a href="#">More Info</a></td>
-</tr> -->
-
-

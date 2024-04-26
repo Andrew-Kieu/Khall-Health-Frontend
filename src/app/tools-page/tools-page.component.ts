@@ -7,11 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './tools-page.component.html',
   styleUrl: './tools-page.component.css'
 })
-export class AboutComponent {
-  imageUrlLeonard: string = 'assets/Leonard.png';
-  imageUrlAndrew: string = 'assets/AndrewDog.png';
-  imageUrlKobi: string = 'assets/Kobi.png';
-  imageUrlHayden: string = 'assets/Hayden.png';
-  imageUrlLucas: string = 'assets/LucasDog.png';
-
+export class ToolsPageComponent {
+  imageUrlPic1: string = 'assets/property1.jpg';
+  imageUrlPic2: string = 'assets/property2.jpg';
+  imageUrlPic3: string = 'assets/property3.jpg';
 }

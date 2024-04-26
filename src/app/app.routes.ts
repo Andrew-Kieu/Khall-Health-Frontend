@@ -7,7 +7,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { NursePageComponent } from './nurse-page/nurse-page.component';
 import { NurseFormComponent } from './nurse-form/nurse-form.component';
-import { SignUpComponent } from './sign-Up/sign-up.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { HospitalSearchComponent } from './hospital-search/hospital-search.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { HospitalFormComponent } from './hospital-form/hospital-form.component';

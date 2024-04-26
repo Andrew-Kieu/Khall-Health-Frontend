@@ -1,0 +1,56 @@
+h1{
+    text-align: center;
+    font-size: 3em;
+    position:relative;
+    top: -32px;
+    padding: 20px;
+    margin-bottom: -20px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+h2{
+    font-size: 30pt;
+    text-align: center;
+}
+h3{
+    font-size: 13pt;
+}
+p {
+    text-align: center;
+    padding: 10px;
+}
+section{
+    padding: 40px;
+    font-size: 15pt;
+    background-color: #ffffff;
+    margin: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.centerbox{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.chatInfo {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the cross axis */
+}
+  
+.propertyPictures {
+flex: 1; /* Allows this div to grow */
+/* No need for text-align left */
+}
+
+.propertyInfo {
+flex: 2; /* Allows this div to take up twice as much space as the pictures */
+/* No need for text-align right */
+}
+
+.shrinkimg {
+width: 100%; /* Adjust as necessary */
+height: auto; /* Maintain aspect ratio */
+margin-bottom: 10px; /* Space between images */
+}
+  

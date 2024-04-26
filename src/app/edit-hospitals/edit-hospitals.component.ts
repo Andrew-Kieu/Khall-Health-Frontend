@@ -3,7 +3,8 @@ import { OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { NurseService } from '../nurse.service';
+// import { NurseService } from '../nurse.service';
+import { Hospital, HospitalService } from '../hospital.service';
 import { Validator } from '@angular/forms'
 import { Nurse } from '../nurse';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,75 +20,71 @@ import { Router } from '@angular/router';
   styleUrl: './edit-hospitals.component.css'
 })
 export class EditHospitalComponent implements OnInit {
-  editNurseForm: FormGroup | null = null;
-  nurseId: string | null = null;
+  editHospitalForm: FormGroup | null = null;
+  hospitalId: number | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private nurseService: NurseService
+    private hospitalService: HospitalService
   ) { }
 
   ngOnInit(): void {
     // Get the nurse ID from the route parameters
     
     // Initialize the form with empty fields
-    this.editNurseForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      profession: ['', Validators.required],
-      specialty: ['', Validators.required],
-      licenses: ['', Validators.required],
-      certifications: ['', Validators.required],
-      degrees: ['', Validators.required],
+    this.editHospitalForm = this.formBuilder.group({
+      hospitalName: ['', Validators.required],
+      hospitalAddress: ['', Validators.required],
+      deptsHiring: ['', Validators.required],
+      numberOfContracts: ['', Validators.required],
       city: ['', Validators.required],
-      state: ['', Validators.required],
-      employed: ['', Validators.required],
-      lookingForWork: ['', Validators.required],
-      previousEmployment: ['', Validators.required],
-      email: ['', Validators.required],
-      appliedToList: ['', Validators.required]
+      hospitalEmail: ['', [Validators.required, Validators.email]],
+      topReviews: [''] // Added topReviews field
     });
 
     this.route.params.subscribe(params => {
-      this.nurseId = params['id'];
-      // Retrieve nurse details by ID and populate the form
-      this.populateForm();
+      // Convert the 'id' parameter to a number
+      const id: number = parseInt(params['id'], 10);
+      // Check if the conversion was successful
+      if (!isNaN(id)) {
+        // Assign the converted ID to the hospitalId property
+        this.hospitalId = id;
+        // Retrieve hospital details by ID and populate the form
+        this.populateForm();
+      } else {
+        // Handle the case where 'id' parameter is not a valid number
+        console.error('Invalid hospital ID:', params['id']);
+        // You may want to handle this error by redirecting to an error page or displaying an error message
+      }
     });
   
   }
 
   populateForm() {
-    if (this.nurseId && this.editNurseForm) {
+    if (this.hospitalId && this.editHospitalForm) {
       // Retrieve nurse details by ID and populate the form
-      this.nurseService.getNurseById(this.nurseId).subscribe((nurse: Nurse) => {
-        if (this.editNurseForm) {
-          this.editNurseForm.patchValue({
-            firstName: nurse.firstName,
-            lastName: nurse.lastName,
-            profession: nurse.profession,
-            specialty: nurse.specialty,
-            licenses: nurse.licenses,
-            certifications: nurse.certifications,
-            degrees: nurse.degrees,
-            city: nurse.city,
-            state: nurse.state,
-            employed: nurse.employed,
-            lookingForWork: nurse.lookingForWork,
-            previousEmployment: nurse.previousEmployment,
-            email: nurse.email,
-            appliedToList: nurse.appliedToList
+      this.hospitalService.getHospitalById(this.hospitalId).subscribe((hospital: Hospital) => {
+        if (this.editHospitalForm) {
+          this.editHospitalForm.patchValue({
+            hospitalName: hospital.hospitalName,
+        hospitalAddress: hospital.hospitalAddress,
+        deptsHiring: hospital.deptsHiring,
+        numberOfContracts: hospital.numberOfContracts,
+        city: hospital.city,
+        hospitalEmail: hospital.hospitalEmail,
+        topReviews: hospital.topReviews 
           });
         }
       });
     }
   }
 
-  updateNurse() {
-    if (this.editNurseForm) {
+  updateHospital() {
+    if (this.editHospitalForm) {
       // Update nurse details
-      const updatedNurseData = this.editNurseForm.value;
-      this.nurseService.updateNurse(this.nurseId!, updatedNurseData).subscribe(
+      const updatedNurseData = this.editHospitalForm.value;
+      this.hospitalService.updateHospital(this.hospitalId!, updatedNurseData).subscribe(
         (response: any) => { // Define the type of response explicitly
           console.log('Nurse updated successfully:', response);
           // Handle success as needed

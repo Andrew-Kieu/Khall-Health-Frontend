@@ -1,10 +1,87 @@
-<div class="main py-8 bg-gray-50 min-h-screen">
+<div class="main py-8 bg-gray-50 min-h-screen" style="background: linear-gradient(to right, #E88AB3, #F0D9FF); 
+border-bottom: 2px solid black;">
+
+    <h1>
+        Tools Page
+    </h1>
+    <section>
+        <div class="centerbox">
+            <h2>Chat Bot Support</h2>
+            <p> Here the jobs page can link to housing solutions. </p>
+            <p> Nurses will be able to utilize this for advice and info.
+            </p>
+        </div>
+    </section>
+
     <div class="content max-w-6xl mx-auto">
         <div class="chatbot-section bg-white p-4 rounded-lg shadow-md">
             <div class="messages-container p-4 h-96 overflow-y-auto rounded-lg bg-purple-50">
                 <!-- Messages will go here -->
-                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow">
-                    <p class="text-gray-800">This is a message from the chatbot.</p>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="margin-right: 20%;">
+                    <p class="text-gray-800">What are the available housing options in Lafayette, LA within a budget of $100,000?</p>
+                </div>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="text-align:right; margin-left: 20%;">
+                    <p class="text-gray-800">Here are some housing options in Lafayette, LA within your budget:</p>
+                    <div class="chatInfo"style="display: flex; align-items: flex-start;">
+                        <div class="propertyPictures">
+                            <img [src]="imageUrlPic1" alt="House 1" class="shrinkimg">
+                            <img [src]="imageUrlPic2" alt="House 2" class="shrinkimg">
+                            <img [src]="imageUrlPic3" alt="House 3" class="shrinkimg">
+                        </div>
+                        <div class="propertyInfo">
+                            <div class="housing-option">
+                                <h3>Condo at 201 S College Rd APT 219</h3>
+                                <ul>
+                                <li>Price: $61,000</li>
+                                <li>Bedrooms: 1</li>
+                                <li>Bathrooms: 1</li>
+                                <li>Living Area: 404 sqft</li>
+                                <li>Status: For Sale</li>
+                                <p></p>
+                                <li><a href="#">More details</a></li>
+                                </ul>
+                                <p></p>
+                                <p></p>
+                            </div>
+                            <div class="housing-option">
+                                <h3>Condo at 310 Ella St Apt 208</h3>
+                                <ul>
+                                <li>Price: $75,000</li>
+                                <li>Bedrooms: 1</li>
+                                <li>Bathrooms: 1</li>
+                                <li>Living Area: 470 sqft</li>
+                                <li>Status: For Sale</li>
+                                <p></p>
+                                <li><a href="#">More details</a></li>
+                                </ul>
+                                <p></p>
+                            </div>
+                            <div class="housing-option">
+                                <h3>Condo at 201 S College Rd APT 219</h3>
+                                <ul>
+                                <li>Price: $89,000 (recently reduced by $3000)</li>
+                                <li>Bedrooms: 1</li>
+                                <li>Bathrooms: 1</li>
+                                <li>Living Area: 662 sqft</li>
+                                <li>Status: For Sale</li>
+                                <p></p>
+                                <li><a href="#">More details</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="margin-right: 20%;">
+                    <p class="text-gray-800">What is more money? Working 14 weeks being paid $1636 per week or 17 weeks for $1457 per week?</p>
+                </div>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="text-align:right; margin-left: 20%;">
+                    <p class="text-gray-800">Working for 14 weeks at $1,636 per week would earn you $22,904, whereas working for 17 weeks at $1,457 per week would earn you $24,769. So, you'd make more money working the 17 weeks at the lower weekly rate.</p>
+                </div>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="margin-right: 20%;">
+                    <p class="text-gray-800">Which address in Lafayette is closer to an elementary school: 201 S College Rd or 310 Ella St?</p>
+                </div>
+                <div class="message-output p-3 mb-2 bg-white rounded-lg shadow" style="text-align:right; margin-left: 20%;">
+                    <p class="text-gray-800">The elementary school closest to 201 S College Rd in Lafayette, LA, is 20 miles away or more. However, the search for elementary schools near 310 Ella St in Lafayette, LA, shows that there are elementary schools in the vicinity. For example, an elementary school is mentioned to be in the attendance zone for 310 Ella St with a reference to it being nearby.</p>
                 </div>
                 <!-- ... more messages ... -->
             </div>

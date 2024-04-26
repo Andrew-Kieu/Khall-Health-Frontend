@@ -1,4 +1,4 @@
-/*import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NurseService } from '../nurse.service';
@@ -31,7 +31,7 @@ styleUrl: './application-search.component.css'
 })
 
 
-export class ApplicationPageComponent {
+export class ApplicationSearchComponent {
 
   nurseArray: Application[] = [];
   selectedNurse: Application | null = null;
@@ -46,13 +46,13 @@ export class ApplicationPageComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private applicationService: ApplicationService,
+  //  private applicationService: ApplicationService,
     private router: Router // Inject Router service
   ) { }
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
     this.getNurses();
-  }
+  }*/
 
 
   toggleSidebar(): void {
@@ -60,8 +60,8 @@ export class ApplicationPageComponent {
   }
 
 
-  getNurses(): void {
-    this.applicationService.getNurses().subscribe(
+ /* getNurses(): void {
+  //  this.applicationService.getNurses().subscribe(
       (nurses) => {
         this.nurseArray = nurses;
       },
@@ -69,9 +69,9 @@ export class ApplicationPageComponent {
         console.error('Error fetching nurses', error);
       }
     );
-  }
+  }*/
   
-  searchNurse(): void {
+ /* searchNurse(): void {
     const query = (document.getElementById('searchBox') as HTMLInputElement).value.toLowerCase();
     const professionFilter = (document.getElementById('professionFilter') as HTMLSelectElement).value;
     const specialtyFilter = (document.getElementById('specialtyFilter') as HTMLSelectElement).value;
@@ -145,5 +145,5 @@ isNurse(): boolean {
    
   }
   return false; // Default to false if user data is not available or if the user's role is not "nurse"
-}
 }*/
+}

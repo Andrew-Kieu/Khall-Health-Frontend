@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   imageUrlLeonard: string = 'assets/Leonard.png';
-  imageUrlAndrew: string = 'assets/AndrewDog.png';
+  imageUrlAndrew: string = 'assets/Andrew.png';
   imageUrlKobi: string = 'assets/Kobi.png';
   imageUrlHayden: string = 'assets/Hayden.png';
-  imageUrlLucas: string = 'assets/LucasDog.png';
+  imageUrlLucas: string = 'assets/LucasPic.png';
 
 }

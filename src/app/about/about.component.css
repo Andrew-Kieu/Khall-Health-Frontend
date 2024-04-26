@@ -16,6 +16,7 @@ h1 {
 
 h2 {
     font-size: 32px; /* Adjusts the size to 32px which is often the size of a standard h1 */
+    text-align: center;
 }
 hr {
     border: none; /* Explicitly state there's no border */
@@ -26,7 +27,11 @@ hr {
 }
 
 
-
+.ourstory{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
 p {
     text-align: center;
     padding: 10px;
@@ -88,4 +93,3 @@ body {
     background-color: #f4f4f4; /* This will be overridden by the gradient */
     background: linear-gradient(to right, #E88AB3, #F0D9FF); /* Gradient background */
 }
-

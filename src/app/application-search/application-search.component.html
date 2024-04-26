@@ -1,10 +1,23 @@
-<div class="main py-8 bg-gray-50 min-h-screen">
+<div class="main py-8 bg-gray-50 min-h-screen" style="background: linear-gradient(to right, #E88AB3, #F0D9FF); 
+border-bottom: 2px solid black;">
+
+    <h1>
+        Applications
+    </h1>
+    <section>
+        <div class="centerbox">
+            <h2>Accept and monitor created applicaions.</h2>
+            <p> Here hospitals can add accept applications. </p>
+            <p> Nurses can ensure their application has been made here.</p>
+        </div>
+    </section>
+
     <div class="content max-w-6xl mx-auto">
         <div class="search-section bg-white p-4 rounded-lg shadow-md">
             <div class="flex flex-wrap gap-4 mb-4">
                 <input type="text" id="searchBox1" placeholder="Application ID..." class="flex-grow p-2 border rounded">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
-                <input type="text" id="searchBox2" placeholder="Nurse/Hospital Name..." class="flex-grow p-2 border rounded">
+                <input type="text" id="searchBox2" placeholder="Nurse/Hospital Name/Id..." class="flex-grow p-2 border rounded">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
                 <select name="Status" id="statusFilter" class="flex-grow p-2 border rounded">
                     <option value="-1">Select Status</option>
@@ -21,7 +34,7 @@
                 <thead class="bg-purple-500 text-white">
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Application ID</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contact ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Contract ID</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nurse ID</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Date Made</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Accepted</th>

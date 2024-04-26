@@ -5,7 +5,7 @@ import { NgFor } from '@angular/common';
 import { Job } from '../job.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SignUpComponent } from '../sign-Up/sign-up.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 import { HospitalSignUpComponent } from '../hospital-sign-up/hospital-sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 

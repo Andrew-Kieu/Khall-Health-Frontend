@@ -65,7 +65,7 @@ export class JobsComponent implements OnInit {
   deleteJob() {
     if (confirm('Are you sure you want to delete this nurse?')) {
       // Get nurse ID from the form or any other source
-      const jobId = this.selectedJob?.id; // Assuming there's an ID field in the form
+      const jobId = this.selectedJob?.contractId; // Assuming there's an ID field in the form
       // console.log(this.nurseForm.get('id')?.value);
       if (jobId) {
         this.jobService.deleteJob(jobId).subscribe(
