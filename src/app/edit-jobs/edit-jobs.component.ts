@@ -21,9 +21,9 @@ import { JobService } from '../job.service';
 })
 export class EditJobsComponent {
   jobForm: FormGroup | null = null;
-  jobId: number | null = null; // Change jobId type to number
+  jobId: number | null = null; 
 
-  successMessage: string | null = null; // Define successMessage property
+  successMessage: string | null = null; 
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,7 +55,7 @@ export class EditJobsComponent {
     this.route.params.subscribe(params => {
       const id = params['id'];
       if (id) {
-        this.jobId = parseInt(id, 10); // Parse id to number
+        this.jobId = parseInt(id, 10); 
         this.populateForm();
       }
     });
@@ -72,17 +72,15 @@ export class EditJobsComponent {
   }
 
   updateJob() {
-    if (this.jobForm && this.jobId) { // Ensure jobId exists and is a number
+    if (this.jobForm && this.jobId) { 
       const updatedJobData = this.jobForm.value;
       this.jobService.updateJob(this.jobId, updatedJobData).subscribe(
         (response: any) => {
-          this.successMessage = 'Job updated successfully'; // Set success message
+          this.successMessage = 'Job updated successfully'; 
           console.log('Job updated successfully:', response);
-          // Handle success as needed
         },
         (error) => {
           console.error('Error updating job:', error);
-          // Handle error as needed
         }
       );
     }

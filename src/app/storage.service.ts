@@ -20,7 +20,7 @@ export class StorageService {
 
   saveToken(token: string): void {
     localStorage.setItem('token', token);
-    console.log('Token stored:', localStorage.getItem('token')); // For verification
+    console.log('Token stored:', localStorage.getItem('token')); 
   }
 
   getToken(): string | null {
@@ -40,7 +40,7 @@ export class StorageService {
 
   saveUser(user: any): void {
   localStorage.setItem('user', JSON.stringify(user));
-  console.log('User stored:', localStorage.getItem('user')); // For verification
+  console.log('User stored:', localStorage.getItem('user')); 
 }
 
   signIn(token: string, user: any): void {

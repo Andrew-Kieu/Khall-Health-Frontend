@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; // Import Router if you need to navigate
+import { Router } from '@angular/router'; 
 import { HospitalService } from '../hospital.service';
 import { NgIf } from '@angular/common';
 
@@ -34,7 +34,6 @@ export class HospitalFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Initialization code here if necessary
   }
 
   sendHospital() {

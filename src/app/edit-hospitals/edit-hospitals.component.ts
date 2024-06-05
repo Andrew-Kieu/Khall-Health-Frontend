@@ -30,9 +30,7 @@ export class EditHospitalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Get the nurse ID from the route parameters
     
-    // Initialize the form with empty fields
     this.editHospitalForm = this.formBuilder.group({
       hospitalName: ['', Validators.required],
       hospitalAddress: ['', Validators.required],
@@ -44,18 +42,12 @@ export class EditHospitalComponent implements OnInit {
     });
 
     this.route.params.subscribe(params => {
-      // Convert the 'id' parameter to a number
       const id: number = parseInt(params['id'], 10);
-      // Check if the conversion was successful
       if (!isNaN(id)) {
-        // Assign the converted ID to the hospitalId property
         this.hospitalId = id;
-        // Retrieve hospital details by ID and populate the form
         this.populateForm();
       } else {
-        // Handle the case where 'id' parameter is not a valid number
         console.error('Invalid hospital ID:', params['id']);
-        // You may want to handle this error by redirecting to an error page or displaying an error message
       }
     });
   

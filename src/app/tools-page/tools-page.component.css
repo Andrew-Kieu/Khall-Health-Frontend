@@ -35,22 +35,20 @@ section{
 
 .chatInfo {
     display: flex;
-    align-items: flex-start; /* Align items at the start of the cross axis */
+    align-items: flex-start; 
 }
   
 .propertyPictures {
-flex: 1; /* Allows this div to grow */
-/* No need for text-align left */
+flex: 1; 
 }
 
 .propertyInfo {
-flex: 2; /* Allows this div to take up twice as much space as the pictures */
-/* No need for text-align right */
+flex: 2; 
 }
 
 .shrinkimg {
-width: 100%; /* Adjust as necessary */
-height: auto; /* Maintain aspect ratio */
-margin-bottom: 10px; /* Space between images */
+width: 100%; 
+height: auto; 
+margin-bottom: 10px; 
 }
   

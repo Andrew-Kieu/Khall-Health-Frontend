@@ -83,7 +83,6 @@ export class EditNurseComponent implements OnInit {
       this.nurseService.updateNurse(this.nurseId!, updatedNurseData).subscribe(
         (response: any) => {
           console.log('Nurse updated successfully:', response);
-          // Assuming you want to display a success message
           this.successMessage = 'Nurse updated successfully.';
         },
         (error) => {

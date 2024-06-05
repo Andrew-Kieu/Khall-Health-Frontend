@@ -37,18 +37,17 @@ export class NursePageComponent {
   nurseArray: Nurse[] = [];
   selectedNurse: Nurse | null = null;
   showSidebar = false;
-  editingMode = false; // Flag to track if in editing mode
+  editingMode = false;
 
 
   nurseForm: FormGroup = this.formBuilder.group({
-    id: [''], // Assuming you have an ID field for the nurse
-    // other form fields here
+    id: [''], 
   });
 
   constructor(
     private formBuilder: FormBuilder,
     private nurseService: NurseService,
-    private router: Router // Inject Router service
+    private router: Router 
   ) { }
 
   ngOnInit(): void {
@@ -100,7 +99,7 @@ export class NursePageComponent {
 
   showMoreInfo(nurse: Nurse): void {
     this.selectedNurse = nurse;
-    this.showSidebar = true; // Controls the visibility of the sidebar
+    this.showSidebar = true; 
   }
 
   closeSidebar(): void {
@@ -109,29 +108,23 @@ export class NursePageComponent {
   }
 
   editNurse(nurseId: string) {
-    // Navigate to the editNurse route along with the nurse ID
     this.router.navigate(['/editNurse', nurseId]);
   }
 
   askToApply() {
-    // Implementation of the method goes here
-    console.log('Ask to Apply clicked'); // Example implementation
+    console.log('Ask to Apply clicked'); 
   }
 
 deleteNurse() {
   if (confirm('Are you sure you want to delete this nurse?')) {
-    // Get nurse ID from the form or any other source
-    const nurseId = this.selectedNurse?.nurseId; // Assuming there's an ID field in the form
-    // console.log(this.nurseForm.get('id')?.value);
+    const nurseId = this.selectedNurse?.nurseId; 
     if (nurseId) {
       this.nurseService.deleteNurse(nurseId.toString()).subscribe(
         () => {
           console.log('Nurse deleted successfully');
-          // Optionally, reset the form or clear form fields
         },
         (error) => {
           console.error('Error deleting nurse:', error);
-          // Handle error as needed
         }
       );
     }
@@ -139,13 +132,11 @@ deleteNurse() {
 }
 
 isNurse(): boolean {
-  // Check if localStorage is available
   if (typeof localStorage !== 'undefined' && localStorage.getItem('role') ===  "nurse") {
-    // Retrieve user data from localStorage
     return true;
    
   }
-  return false; // Default to false if user data is not available or if the user's role is not "nurse"
+  return false; 
 }
 }
 

@@ -4,14 +4,7 @@ import { Observable } from 'rxjs';
 
 // Define the Hospital interface directly in the service file
 export interface Hospital {
-  // id?: number;
-  // name: string;
-  // location: string;
-  // departmentsHiring: string;
-  // numberOfContracts: number;
-  // detailedAddress: string;
-  // contactEmail: string;
-
+  \
 
   hospitalId?: number;
   hospitalName: string;
@@ -29,7 +22,7 @@ export interface Hospital {
   providedIn: 'root'
 })
 export class HospitalService {
-  private baseUrl = 'http://localhost:8080/api/hospitals'; // Adjust the base URL as needed
+  private baseUrl = 'http://localhost:8080/api/hospitals'; 
 
   constructor(private http: HttpClient) { }
 

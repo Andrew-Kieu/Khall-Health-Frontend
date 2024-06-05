@@ -24,7 +24,6 @@ export class ChoosingRoleComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) {
     this.signUpForm = this.fb.group({
       role: ['', Validators.required]
-      // Add other form controls as necessary
     });
   }
 
@@ -40,11 +39,9 @@ export class ChoosingRoleComponent implements OnInit {
           this.router.navigate(['/signUp']); // Redirect to the nurse sign-up page
           break;
         default:
-          // Handle unknown role or add error handling
           break;
       }
     } else {
-      // Handle form validation errors or alert the user
       alert('Please fill all required fields and select a role.');
     }
   }

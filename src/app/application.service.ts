@@ -18,7 +18,7 @@ export interface Application {
 providedIn: 'root'
 })
 export class ApplicationService {
-  private baseUrl = 'http://localhost:8080/api/applications'; // Adjust the base URL as needed
+  private baseUrl = 'http://localhost:8080/api/applications'; 
 
   constructor(private http: HttpClient) { }
 

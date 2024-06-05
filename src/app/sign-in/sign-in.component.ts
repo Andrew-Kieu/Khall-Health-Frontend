@@ -36,9 +36,7 @@ export class SignInComponent {
 
   onSubmit() {
 
-    // const storedEmail = localStorage.getItem('signupEmail');
-    // const storedPassword = localStorage.getItem('signupPassword');
-  
+    
     this.submitted = true;
 
     if (this.signInForm.invalid) {
@@ -46,12 +44,7 @@ export class SignInComponent {
     }
 
 
-    // Simulate successful login
-    // const user = {
-    //   email: email,
-    //   role: 'nurse' // Assuming role should be set to 'nurse'
-    // };
-
+  
 
     const { email, password } = this.signInForm.value;
     this.loggingInService.login(email, password).subscribe(
@@ -68,17 +61,7 @@ export class SignInComponent {
           localStorage.setItem('hospitalName', user.hospitalName)
           localStorage.setItem('role', 'hospital')
         }
-    // if (email === storedEmail && password === storedPassword) {
-      // Simulate successful login
-      // const user = {
-      //   email: email,
-      //   role: 'nurse' // Assuming role should be set to 'nurse'
-      
   
-      // Store user data in localStorage upon successful login
-      // this.storageService.setCurrentUser(user);
-  
-      // Redirect to the desired route
       this.router.navigate(['/']);
       },
      (error) => {
@@ -91,47 +74,3 @@ export class SignInComponent {
 }
 
 
-// export class SignInComponent {
-//   signInForm: FormGroup;
-//   submitted = false;
-//   successMessage: string = '';
-
-//   constructor(
-//     private authService: AuthService,
-//     private formBuilder: FormBuilder,
-//     private storageService: StorageService, // Injected StorageService
-//     private router: Router
-//   ) {
-//     this.signInForm = this.formBuilder.group({
-//       email: ['', [Validators.required, Validators.email]], // Added email validation
-//       password: ['', [Validators.required, Validators.minLength(6)]] // Added a minimum length validation
-//     });
-//   }
-
-  // onSubmit() {
-  //   this.submitted = true;
-  
-  //   if (this.signInForm.invalid) {
-  //     this.successMessage = 'Please fill in the form correctly.';
-  //     return;
-  //   }
-  
-  //   this.authService.signIn(this.signInForm.value).subscribe({
-  //     next: (res) => {
-  //       if (res.jwt) {
-  //         this.storageService.saveToken(res.jwt);
-  //         this.storageService.saveUser({ id: res.id, role: res.userRoles }); // Adjust according to your user object
-      
-  //         console.log('Redirecting to home...');
-  //         this.router.navigateByUrl('/').then(success => {
-  //           console.log('Redirection success:', success);
-  //         }).catch(error => {
-  //           console.error('Redirection error:', error);
-  //         });
-  //       } else {
-  //         this.successMessage = 'Login failed. Please check your credentials.';
-  //       }
-  //     },
-  //   });
-  // }
-  
