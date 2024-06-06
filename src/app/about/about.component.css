@@ -1,43 +1,55 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background: linear-gradient(to right, #E88AB3, #F0D9FF); 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    color: #333; /* Text color changed to dark for visibility without background */
+    color: #333; 
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 3em; /* Makes the "About Us" text larger */
+    font-size: 3em; 
 }
 
 h2 {
-    font-size: 32px; /* Adjusts the size to 32px which is often the size of a standard h1 */
+    font-size: 32px; 
     text-align: center;
+    color: #333;
 }
+
 hr {
-    border: none; /* Explicitly state there's no border */
-    height: 2px; /* Increase height for visibility */
-    background-color: #333; /* Ensure this color contrasts with the background */
+    border: none; 
+    height: 2px; 
+    background-color: #333; 
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-.ourstory{
+.ourstory {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
+
 p {
     text-align: center;
     padding: 10px;
 }
 
 main {
+    flex: 1; /* This makes main take up the remaining space */
     padding: 20px;
 }
 
@@ -45,16 +57,8 @@ section {
     margin-bottom: 30px;
 }
 
-h2 {
-    color: #333;
-}
-
-.cmps {
-  display: flex;
-}
-
-.infx {
-  display: flex;
+.cmps, .infx {
+    display: flex;
 }
 
 .team {
@@ -82,14 +86,4 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-}
-.custom-gradient {
-    background: linear-gradient(to right, #E88AB3, #F0D9FF); /* From light mulberry to light mauve */
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* This will be overridden by the gradient */
-    background: linear-gradient(to right, #E88AB3, #F0D9FF); /* Gradient background */
 }

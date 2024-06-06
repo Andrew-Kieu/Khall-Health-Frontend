@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// Define the Hospital interface directly in the service file
 export interface Hospital {
-  \
+  
 
   hospitalId?: number;
   hospitalName: string;
