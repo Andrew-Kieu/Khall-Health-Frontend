@@ -22,12 +22,18 @@ export class HospitalFormComponent implements OnInit {
     private hospitalService: HospitalService, 
     private formBuilder: FormBuilder,
     private router: Router
+    private router: Router
   ) {
     this.hospitalForm = this.formBuilder.group({
       hospitalName: ['', Validators.required],
       hospitalAddress: ['', Validators.required],
       deptsHiring: ['', Validators.required],
+      hospitalName: ['', Validators.required],
+      hospitalAddress: ['', Validators.required],
+      deptsHiring: ['', Validators.required],
       numberOfContracts: ['', Validators.required],
+      city: ['', Validators.required],
+      hospitalEmail: ['', [Validators.required, Validators.email]]
       city: ['', Validators.required],
       hospitalEmail: ['', [Validators.required, Validators.email]]
     });
@@ -40,6 +46,7 @@ export class HospitalFormComponent implements OnInit {
     this.submitted = true;
     if (this.hospitalForm.invalid) {
       return;
+      return;
     }
 
     this.hospitalService.createHospital(this.hospitalForm.value).subscribe(
@@ -48,9 +55,12 @@ export class HospitalFormComponent implements OnInit {
         this.successMessage = 'Hospital added successfully';
         this.hospitalForm.reset();
         this.submitted = false;
+        this.hospitalForm.reset();
+        this.submitted = false;
       },
       (error) => {
         console.error('Error adding hospital:', error);
+        this.successMessage = 'Failed to add hospital. Please check your entries.';
         this.successMessage = 'Failed to add hospital. Please check your entries.';
       }
     );

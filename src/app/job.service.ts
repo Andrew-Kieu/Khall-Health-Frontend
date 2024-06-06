@@ -8,7 +8,12 @@ import { throwError } from 'rxjs';
 export interface Job {
   contractId: number;
   hospitalId: string;
+  contractId: number;
+  hospitalId: string;
   hospitalName: string;
+  title: string;
+  hospitalAddress: string;
+  hospitalEmail: string;
   title: string;
   hospitalAddress: string;
   hospitalEmail: string;
@@ -17,11 +22,17 @@ export interface Job {
   licenseReq: string;
   certificationReq: string;
   degreeReq: string;
+  specialtyReq: string;
+  licenseReq: string;
+  certificationReq: string;
+  degreeReq: string;
   details: string;
+  contractExpiration: number;
   contractExpiration: number;
   payPerWeek: number;
   hoursPerWeek: number;
   contractLength: number;
+  isActive: boolean
   isActive: boolean
 
 }

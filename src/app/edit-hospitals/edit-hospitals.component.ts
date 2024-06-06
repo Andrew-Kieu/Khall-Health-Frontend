@@ -5,6 +5,8 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 // import { NurseService } from '../nurse.service';
 import { Hospital, HospitalService } from '../hospital.service';
+// import { NurseService } from '../nurse.service';
+import { Hospital, HospitalService } from '../hospital.service';
 import { Validator } from '@angular/forms'
 import { Nurse } from '../nurse';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,10 +24,13 @@ import { Router } from '@angular/router';
 export class EditHospitalComponent implements OnInit {
   editHospitalForm: FormGroup | null = null;
   hospitalId: number | null = null;
+  editHospitalForm: FormGroup | null = null;
+  hospitalId: number | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private hospitalService: HospitalService
     private hospitalService: HospitalService
   ) { }
 
@@ -37,6 +42,8 @@ export class EditHospitalComponent implements OnInit {
       deptsHiring: ['', Validators.required],
       numberOfContracts: ['', Validators.required],
       city: ['', Validators.required],
+      hospitalEmail: ['', [Validators.required, Validators.email]],
+      topReviews: [''] // Added topReviews field
       hospitalEmail: ['', [Validators.required, Validators.email]],
       topReviews: [''] // Added topReviews field
     });
@@ -55,7 +62,18 @@ export class EditHospitalComponent implements OnInit {
 
   populateForm() {
     if (this.hospitalId && this.editHospitalForm) {
+    if (this.hospitalId && this.editHospitalForm) {
       // Retrieve nurse details by ID and populate the form
+      this.hospitalService.getHospitalById(this.hospitalId).subscribe((hospital: Hospital) => {
+        if (this.editHospitalForm) {
+          this.editHospitalForm.patchValue({
+            hospitalName: hospital.hospitalName,
+        hospitalAddress: hospital.hospitalAddress,
+        deptsHiring: hospital.deptsHiring,
+        numberOfContracts: hospital.numberOfContracts,
+        city: hospital.city,
+        hospitalEmail: hospital.hospitalEmail,
+        topReviews: hospital.topReviews 
       this.hospitalService.getHospitalById(this.hospitalId).subscribe((hospital: Hospital) => {
         if (this.editHospitalForm) {
           this.editHospitalForm.patchValue({
@@ -74,7 +92,11 @@ export class EditHospitalComponent implements OnInit {
 
   updateHospital() {
     if (this.editHospitalForm) {
+  updateHospital() {
+    if (this.editHospitalForm) {
       // Update nurse details
+      const updatedNurseData = this.editHospitalForm.value;
+      this.hospitalService.updateHospital(this.hospitalId!, updatedNurseData).subscribe(
       const updatedNurseData = this.editHospitalForm.value;
       this.hospitalService.updateHospital(this.hospitalId!, updatedNurseData).subscribe(
         (response: any) => { // Define the type of response explicitly
