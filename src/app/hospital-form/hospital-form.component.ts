@@ -22,18 +22,12 @@ export class HospitalFormComponent implements OnInit {
     private hospitalService: HospitalService, 
     private formBuilder: FormBuilder,
     private router: Router
-    private router: Router
   ) {
     this.hospitalForm = this.formBuilder.group({
       hospitalName: ['', Validators.required],
       hospitalAddress: ['', Validators.required],
       deptsHiring: ['', Validators.required],
-      hospitalName: ['', Validators.required],
-      hospitalAddress: ['', Validators.required],
-      deptsHiring: ['', Validators.required],
       numberOfContracts: ['', Validators.required],
-      city: ['', Validators.required],
-      hospitalEmail: ['', [Validators.required, Validators.email]]
       city: ['', Validators.required],
       hospitalEmail: ['', [Validators.required, Validators.email]]
     });

@@ -1,7 +1,6 @@
 export class Nurse {
 
     nurseId: number;
-    nurseId: number;
     firstName: string;
     lastName: string;
     profession: string;
@@ -21,7 +20,6 @@ export class Nurse {
     
     constructor(
     nurseId: number,
-    nurseId: number,
     firstName: string,
     lastName: string,
     profession: string,
@@ -39,7 +37,6 @@ export class Nurse {
     
     ) {
     
-     this.nurseId = nurseId;
      this.nurseId = nurseId;
     
     this.firstName = firstName;
